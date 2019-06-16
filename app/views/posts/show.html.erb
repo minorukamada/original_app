@@ -1,0 +1,20 @@
+<li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(@post.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to @post.user.name, user_path(@post.user) %> <span class="text-muted">posted at <%= @post.created_at %></span>
+        </div>
+        <div>
+          <p><%= @post.content %></p>
+        </div>
+        
+        <!--削除ボタン-->
+        <div>
+          <% if current_user == @post.user && controller.action_name == "show"%>
+            <%= link_to @post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default" do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </li>

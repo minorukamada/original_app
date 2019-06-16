@@ -10,6 +10,7 @@
       <ul class="navbar-nav">
         <% if logged_in? %>
           <li class="nav-item dropdown">
+            <li class="nav-item"><%= link_to '新規投稿', new_post_path, class: 'nav-link' %></li>
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>

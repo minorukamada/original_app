@@ -7,7 +7,7 @@
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
         </div>
         <div>
-          <p><%= post.content %></p>
+          <p><%= link_to post.content, post %></p>
         </div>
         
         <!--削除ボタン-->
