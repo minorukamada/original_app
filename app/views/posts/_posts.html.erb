@@ -1,25 +1,19 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
-    <li class="media mb-3">
-      <img class="mr-2 rounded" src="<%= gravatar_url(post.user, { size: 50 }) %>" alt="">
-      <div class="media-body">
-        <div>
-          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
-        </div>
-        <div>
-          <p><%= link_to post.content, post %></p>
-        </div>
-        
-        <!--削除ボタン-->
-        <div>
-          <% if current_user == post.user && controller.action_name == "show"%>
-            <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default" do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </li>
+  <li class="card mb-3">
+    <div class="card-body p-2">
+      <h5 class="card-title mb-1"><%= link_to post.title, post %></h5>
+      <p class="card-text m-0">投稿者：<%= link_to post.user.name, user_path(post.user) %></p>
+      <p class="card-text"><small class="text-muted">投稿日時：<%= post.created_at %></small></p>
+    </div>
+    
+    <%= render 'posts/posts_button', post: post %>
+    
+  </li>
   <% end %>
   <%= paginate posts %>
 </ul>
+
+
+
+      

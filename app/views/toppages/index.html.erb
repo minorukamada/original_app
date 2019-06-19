@@ -1,17 +1,22 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>サイトタイトル</h1>
+<%= render 'layouts/top' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="d-flex justify-content-between">
+        <p class="h5">新着投稿</p>
+        <%= link_to 'もっと見る', posts_path %>
+      </div>
+      <%= render 'posts/posts', posts: @posts %>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex justify-content-between">
+      <p class="h5">おすすめユーザー</p>
+      <%= link_to 'もっと見る', users_path %>
+      </div>
+      <%= render 'users/users', users: @users %>
+    </div>
   </div>
 </div>
 
-
-
-
-<div class="row">
-  <div class="col-6">
-    <%= render 'posts/posts', posts: @posts %>
-  </div>
-  <div class="col-6">
-    <%= render 'users/users', users: @users %>
-  </div>
-</div>
+<%= render 'layouts/footer' %>

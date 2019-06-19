@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   # before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:update, :destroy]
+  
+  def index
+    @posts = Post.order(id: :desc).page(params[:page]).per(25)
+  end
   
   def show
     @post = Post.find(params[:id])
@@ -22,16 +26,31 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+  
+  def update
+    if @post.update(post_params)
+      flash[:success] = '更新しました。'
+      redirect_to root_url
+    else
+      flash.now[:danger] = '更新に失敗しました。'
+      render root_url
+    end
+  end
+
+
   def destroy
     @post.destroy
     flash[:success] = 'メッセージを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:title, :content)
   end
   
   def correct_user

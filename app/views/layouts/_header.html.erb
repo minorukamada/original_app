@@ -1,6 +1,6 @@
-<header class="mb-4">
+<header>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Microposts</a>
+    <a class="navbar-brand" href="/">Minimal Life</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,8 +19,8 @@
             </ul>
           </li>
         <% else %>
-          <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
