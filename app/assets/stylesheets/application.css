@@ -63,3 +63,7 @@ a:hover{
 .card{
   border-left: solid 5px black;
 }
+
+.shadow {
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
+}
