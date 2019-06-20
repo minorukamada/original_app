@@ -1,3 +1,10 @@
 <div class="container">
+  <div class="bg-light p-3">
+    <%= form_tag(posts_path, :method => 'get') do %>
+      <%= text_field_tag :search, '', class: 'form-control', :placeholder => "キーワード検索"%>
+      <%= submit_tag 'Search', :title => nil, class: 'btn btn-outline-primary' %>
+    <% end %>
+  </div>
   <%= render 'posts/posts', posts: @posts %>
 </div>
+

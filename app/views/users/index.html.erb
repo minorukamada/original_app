@@ -1,3 +1,9 @@
 <div class="container">
+  <div class="bg-light p-3">
+    <%= form_tag(users_path, :method => 'get') do %>
+      <%= text_field_tag :search, '', class: 'form-control', :placeholder => "ユーザー検索"%>
+      <%= submit_tag 'Search', :name => nil, class: 'btn btn-outline-primary' %>
+    <% end %>
+  </div>
   <%= render 'users', users: @users %>
 </div>
