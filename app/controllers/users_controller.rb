@@ -26,6 +26,22 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def edit 
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = '更新しました。'
+      redirect_to root_url
+    else
+      flash.now[:danger] = '更新に失敗しました。'
+      render root_url
+    end
+  end
+  
 
   private
 

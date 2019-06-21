@@ -2,4 +2,12 @@
   <h5><%= @user.name %>の詳細ページ</h5>
   <p>過去の投稿</p>
   <%= render 'posts/posts', posts: @posts %>
+  
+  <% if current_user == @user %>
+    <div>
+      <%=link_to edit_user_path(@user), class: "btn btn-default" do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    </div>
+  <% end %>
 </div>

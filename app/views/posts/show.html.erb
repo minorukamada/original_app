@@ -1,5 +1,5 @@
 <div class="container">
-  <h5><%= @post.title %></h5>
+  <h1><%= @post.title %></h1>
   <p>投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
   <p><small class="text-muted">投稿日時：<%= @post.created_at %></small></p>
   <p><%= @post.content %></p>
