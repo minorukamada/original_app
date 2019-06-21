@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     else
       @posts = current_user.posts.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
 
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = '更新に失敗しました。'
-      render root_url
+      render :edit
     end
   end
 

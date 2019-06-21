@@ -1,7 +1,9 @@
 <div class="container">
   <%= form_with(model: @post, local: true) do |f| %>
     <div class="form-group">
+      <%= f.label :title %>
       <%= f.text_area :title, class: 'form-control' %>
+      <%= f.label :content %>
       <%= f.text_area :content, class: 'form-control', rows: 5 %>
     </div>
     <%= f.submit '修正して投稿する', class: 'btn btn-primary btn-block' %>
