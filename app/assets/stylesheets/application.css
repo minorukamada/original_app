@@ -64,8 +64,20 @@ a:hover{
 
 
 .card{
-  border-left: solid 5px black;
   border-radius: 0;
+  position: relative;
+}
+
+
+
+.card:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-right: 20px solid transparent;
+	border-top: 20px solid red; 
+	content: "";
+	opacity: 0.5;
 }
 
 .shadow {
