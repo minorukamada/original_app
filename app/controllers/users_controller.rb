@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25).search(params[:search])
+    
   end
 
   def show
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'ユーザを登録しました。'
-      redirect_to @user
+      redirect_to controller: 'sessions', action: 'new'
     else
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = '更新に失敗しました。'
-      render root_url
+      render :edit
     end
   end
   
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
   end
   
   def correct_user
+    @user = User.find(params[:id])
     unless @user == current_user && logged_in?
       redirect_to root_url
     end

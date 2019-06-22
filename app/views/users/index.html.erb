@@ -5,5 +5,11 @@
       <%= submit_tag 'Search', :name => nil, class: 'btn btn-outline-primary' %>
     <% end %>
   </div>
-  <%= render 'users', users: @users %>
+  <div>
+    <% if @users.count > 0  %>
+      <%= render 'users', users: @users %>
+    <% else %>
+      <p>該当するユーザーが見つかりませんでした。</p>
+    <% end %>
+  </div>
 </div>

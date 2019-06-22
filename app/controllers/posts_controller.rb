@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   # before_action :require_user_logged_in
-  before_action :correct_user, only: [:update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def index
     @posts = Post.order(id: :desc).page(params[:page]).per(10).search(params[:search])
