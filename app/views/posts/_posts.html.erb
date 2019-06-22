@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
-  <li class="card mb-3 shadow">
+  <li class="card mb-3 shadow" id="post-<%= post.id %>">
     <div class="card-body p-2">
       <h5 class="card-title mb-1"><%= link_to post.title, post %></h5>
       <p class="card-text m-0">投稿者：<%= link_to post.user.name, user_path(post.user) %></p>
@@ -14,6 +14,11 @@
   <%= paginate posts %>
 </ul>
 
-
-
-      
+<script> 
+$('.card').on('click', function(event) {
+  const id = $(this).attr("id").replace("post-", "");
+  if (event.target.tagName !== 'svg' && event.target.tagName !== 'A' && event.target.tagName !== 'path') {
+    location.href = "/posts/" + id;
+  }
+})
+</script> 
