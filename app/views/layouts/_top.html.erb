@@ -1,4 +1,6 @@
-<div class="top mb-5">
-  <%= image_tag('/top.jpg') %>
-  <p>minimal life<br>maximum happiness</p>
-</div>
+<% if controller_name == "toppages" && controller.action_name == "index"%>
+  <div class="top mb-5">
+    <%= image_tag('/top.jpg') %>
+    <p>minimal life<br>maximum happiness</p>
+  </div>
+<% end %>

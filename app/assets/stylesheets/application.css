@@ -46,10 +46,11 @@ a:hover{
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: 4em;
   font-family :Quicksand, sans-serif;
+  text-shadow:2px 2px 5px black;
 }
 
 /*"posts/post"*/
@@ -72,4 +73,14 @@ a:hover{
   cursor: pointer;
   background-color: #DDD;
   z-index: 2;
+}
+
+.flash_messages{
+  text-align: center;
+}
+
+.flash_message{
+  position: fixed;
+  top: 56px;
+  width: 100%;
 }
