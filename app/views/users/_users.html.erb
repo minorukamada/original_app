@@ -4,10 +4,9 @@
       <li class="media mb-1">
         <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
         <div class="media-body">
-          <div>
-            <p><%= link_to user.name, user_path(user) %></p>
-            <p><%=  user.introduction %></p>
-          </div>
+          <h5 class="mt-0"><%= link_to user.name, user_path(user) %></h5>
+          <p class="user_introduction"><%= user.introduction %></p>
+          
         </div>
         <%= render 'relationships/follow_button', user: user %>
       </li>
@@ -15,3 +14,4 @@
   </ul>
   <!--<%= paginate users %>-->
 <% end %>
+
