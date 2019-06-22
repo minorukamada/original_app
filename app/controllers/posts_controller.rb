@@ -42,9 +42,10 @@ class PostsController < ApplicationController
 
 
   def destroy
+    @deleted_post_id = @post.id
     @post.destroy
-    flash[:success] = 'メッセージを削除しました。'
-    redirect_to root_url
+    # flash[:success] = 'メッセージを削除しました。'
+    # redirect_to root_url
   end
 
   private

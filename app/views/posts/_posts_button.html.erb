@@ -9,7 +9,7 @@
       </div>
       <!--削除ボタン-->
       <div>
-        <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default" do %>
+        <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default", remote: true do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
       </div>
