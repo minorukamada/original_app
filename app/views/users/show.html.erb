@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @user.name %>の詳細ページ</h1>
+  <p><%= @user.introduction %></p>
   <%= render 'relationships/follow_button', user: @user %>
   <p>Followings <span class="badge badge-secondary"><%= @count_followings %></span></p>
   <p>Followers <span class="badge badge-secondary"><%= @count_followers %></span></p>

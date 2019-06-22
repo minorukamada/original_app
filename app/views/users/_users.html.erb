@@ -6,6 +6,7 @@
         <div class="media-body">
           <div>
             <p><%= link_to user.name, user_path(user) %></p>
+            <p><%=  user.introduction %></p>
           </div>
         </div>
         <%= render 'relationships/follow_button', user: user %>
