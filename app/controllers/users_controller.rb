@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25).search(params[:search])
-    @posts = current_user.feed_microposts.order(id: :desc).page(params[:page])
+    if logged_in?
+      @posts = current_user.feed_posts.order(id: :desc).page(params[:page])
+    else
+      @post = Post.order(id: :desc).page(params[:page]).per(25)
+    end
   end
 
   def show
