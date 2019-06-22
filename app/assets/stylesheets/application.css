@@ -15,11 +15,12 @@
  */
 
 a{
-  color: #212529;  
+  color: #212529; 
+  text-decoration : underline;
 }
 
 a:hover{
-  color: #ddd;
+  color: #AAA;
   text-decoration: none;
 }
 
@@ -50,7 +51,7 @@ a:hover{
   font-weight: bold;
   font-size: 4em;
   font-family :Quicksand, sans-serif;
-  text-shadow:2px 2px 5px black;
+  text-shadow:5px 5px 10px black;
 }
 
 /*"posts/post"*/

@@ -1,8 +1,9 @@
 <div class="container">
   <h1><%= @user.name %>の詳細ページ</h1>
   <%= render 'relationships/follow_button', user: @user %>
-  <p>Followings</p><span class="badge badge-secondary"><%= @count_followings %></span>
-  <p>Followers</p><span class="badge badge-secondary"><%= @count_followers %></span>
+  <p>Followings <span class="badge badge-secondary"><%= @count_followings %></span></p>
+  <p>Followers <span class="badge badge-secondary"><%= @count_followers %></span></p>
+  <p>posts <span class="badge badge-secondary"><%= @count_posts %></span></p>
   
   <% if current_user == @user %>
     <div class="btn btn-light">
