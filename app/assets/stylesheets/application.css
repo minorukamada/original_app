@@ -64,6 +64,7 @@ a:hover{
 
 .card{
   border-left: solid 5px black;
+  border-radius: 0;
 }
 
 .shadow {
