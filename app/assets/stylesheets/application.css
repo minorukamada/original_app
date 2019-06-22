@@ -84,7 +84,7 @@ a:hover{
   box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
 }
 
-.card:hover{
+.card:hover, .media:hover{
   cursor: pointer;
   background-color: #DDD;
   z-index: 2;

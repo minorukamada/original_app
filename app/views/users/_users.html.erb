@@ -1,10 +1,10 @@
 <% if users.any? %>
   <ul class="list-unstyled">
     <% users.each do |user| %>
-      <li class="media mb-1">
+      <li class="media mb-1" id="user-<%= user.id %>">
         <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
         <div class="media-body">
-          <h5 class="mt-0"><%= link_to user.name, user_path(user) %></h5>
+          <h5 class="mt-0"><%= user.name %></h5>
           <p class="user_introduction"><%= user.introduction %></p>
           
         </div>
@@ -14,4 +14,13 @@
   </ul>
   <!--<%= paginate users %>-->
 <% end %>
+
+<script> 
+$('.media').on('click', function(event) {
+  const id = $(this).attr("id").replace("user-", "");
+  if (event.target.tagName !== 'svg' && event.target.tagName !== 'A' && event.target.tagName !== 'path') {
+    location.href = "/users/" + id;
+  }
+})
+</script> 
 
