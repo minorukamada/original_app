@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:followings, :followers]
   before_action :correct_user, only: [:edit]
   
   def index
@@ -41,6 +42,18 @@ class UsersController < ApplicationController
       flash.now[:danger] = '更新に失敗しました。'
       render :edit
     end
+  end
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+    counts(@user)
   end
   
 
