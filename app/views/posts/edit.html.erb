@@ -3,6 +3,13 @@
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_area :title, class: 'form-control' %>
+      <%= f.label :category %>
+      <div>
+        <label><%= f.radio_button :category, "衣" %> 衣 </label>
+        <label><%= f.radio_button :category, "食" %> 食 </label>
+        <label><%= f.radio_button :category, "住" %> 住 </label>
+        <label><%= f.radio_button :category, "その他" %> その他 </label>
+      </div>
       <%= f.label :content %>
       <%= f.text_area :content, class: 'form-control', rows: 5 %>
     </div>

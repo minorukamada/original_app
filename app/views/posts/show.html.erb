@@ -3,6 +3,7 @@
   <p>投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
   <p><small class="text-muted">投稿日時：<%= @post.created_at %></small></p>
   <p><%= @post.content %></p>
+  <p><%= @post.category %></p>
   
   <%= render 'posts/posts_button', post: @post %>
 </div>

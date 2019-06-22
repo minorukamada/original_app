@@ -1,14 +1,15 @@
 <ul class="list-unstyled">
   <% posts.each do |post| %>
   <li class="card mb-3 shadow" id="post-<%= post.id %>">
+    <!--<%= post.inspect %>-->
     <div class="card-body p-2">
       <h5 class="card-title mb-1"><%=post.title %></h5>
+      
       <p class="card-text m-0">投稿者：<%= link_to post.user.name, user_path(post.user) %></p>
+      <p class="card-text m-0"><small class="text-muted">カテゴリー：<%=post.category %></small></p>
       <p class="card-text"><small class="text-muted">投稿日時：<%= post.created_at %></small></p>
     </div>
-    
     <%= render 'posts/posts_button', post: post %>
-    
   </li>
   <% end %>
   <%= paginate posts %>
