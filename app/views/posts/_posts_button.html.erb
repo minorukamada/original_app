@@ -4,17 +4,15 @@
       <!--編集ボタン-->
       <div>
         <%=link_to edit_post_path(post), class: "btn btn-default" do %>
-          <i class="far fa-edit"></i>
+          <i class="far fa-edit fa-lg"></i>
         <% end %>
       </div>
       <!--削除ボタン-->
       <div>
         <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default", remote: true do %>
-          <i class="far fa-trash-alt"></i>
+          <i class="far fa-trash-alt fa-lg"></i>
         <% end %>
       </div>
-      
-      
     <% end %>
   </div>
 </div>

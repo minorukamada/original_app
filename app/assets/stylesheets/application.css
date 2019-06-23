@@ -18,6 +18,19 @@ body{
   background-color: gray;
 }
 
+
+.navbar-brand{
+  text-decoration : none;
+}
+
+.navbar-nav li a{
+  text-decoration : none;
+}
+
+.navbar-nav li a{
+  text-decoration : none;
+}
+
 a{
   color: #212529; 
   text-decoration : underline;
@@ -137,4 +150,17 @@ a:hover{
   height: 96px;
   background-color: white;
   border-bottom: solid 1px gray;
+}
+
+.nav-tabs .nav-item > a{
+  text-decoration: none;
+}
+
+.nav-tabs .nav-item > a:hover{
+  color: #212529;
+  text-decoration: none;
+}
+
+.post_show{
+  background-color: white;
 }
