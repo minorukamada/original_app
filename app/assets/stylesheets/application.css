@@ -84,10 +84,6 @@ a:hover{
 	opacity: 0.5;
 }
 
-.shadow {
-  box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
-}
-
 .card:hover, .media:hover{
   cursor: pointer;
   background-color: #DDD;
@@ -102,4 +98,43 @@ a:hover{
   position: fixed;
   top: 56px;
   width: 100%;
+}
+
+#user_items .nav-item{
+  /*border-top: solid 1px gray;*/
+  /*border-right: solid 1px gray;*/
+  /*border-left: solid 1px gray;*/
+  border: none;
+  border-radius: 20px 20px 0 0;
+}
+
+#user_items .nav-item:hover{
+  background-color: white;
+}
+
+#user_items .nav-link{
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+#user_items .nav-link.active{
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+#user_items .nav-link{
+  border: none;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+
+.user_item {
+  background-color: white;
+}
+
+.media{
+  height: 96px;
+  background-color: white;
+  border-bottom: solid 1px gray;
 }

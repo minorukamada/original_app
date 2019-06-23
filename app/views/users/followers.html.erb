@@ -1,1 +1,16 @@
-<%= render 'users', users: @followers %>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+
+    <h1><%= @user.name %>の詳細ページ</h1>
+    <p><%= @user.introduction %></p>
+    <%= render 'relationships/follow_button', user: @user %>
+    <% if current_user == @user %>
+      <div class="btn btn-light">
+        <%=link_to 'ユーザー情報を編集する', edit_user_path(@user) %>
+      </div>
+    <% end %>
+
+    <%= render 'users/items'%>
+    <%= render 'users', users: @followers %>
+  </div>
+</div>

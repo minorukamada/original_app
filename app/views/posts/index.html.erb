@@ -1,24 +1,22 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      
-      <div class="p-3 mt-3 mb-3">
-        <%= form_tag(posts_path, :method => 'get') do %>
-          <div class="d-flex justify-content-between">
-            <%= text_field_tag :search, '', class: 'form-control mr-1', :placeholder => "タイトル検索"%>
-            <%= submit_tag 'Search', :title => nil, class: 'btn btn-outline-dark' %>
-          </div>
-        <% end %>
-      </div>
-      <div>
-        <% if @posts.count > 0  %>
-          <%= render 'posts/posts', posts: @posts %>
-        <% else %>
-          <p>該当する投稿が見つかりませんでした。</p>
-        <% end %>
-      </div>
-      
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    
+    <div class="p-3 mt-3 mb-3">
+      <%= form_tag(posts_path, :method => 'get') do %>
+        <div class="d-flex justify-content-between">
+          <%= text_field_tag :search, '', class: 'form-control mr-1', :placeholder => "タイトル検索"%>
+          <%= submit_tag 'Search', :title => nil, class: 'btn btn-outline-dark' %>
+        </div>
+      <% end %>
     </div>
+    <div>
+      <% if @posts.count > 0  %>
+        <%= render 'posts/posts', posts: @posts %>
+      <% else %>
+        <p>該当する投稿が見つかりませんでした。</p>
+      <% end %>
+    </div>
+    
   </div>
 </div>
 
