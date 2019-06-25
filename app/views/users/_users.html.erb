@@ -8,9 +8,12 @@
           <p class="user_introduction"><%= user.introduction %></p>
           
         </div>
+        
         <%= render 'relationships/follow_button', user: user %>
+        
       </li>
     <% end %>
+    
   </ul>
   <!--<%= paginate users %>-->
 <% end %>

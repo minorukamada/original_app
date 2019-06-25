@@ -14,4 +14,6 @@ class Post < ApplicationRecord
   
   has_many :reverses_of_favorite, class_name: 'Favorite'
   has_many :likers, through: :reverses_of_favorite, source: :user, dependent: :destroy
+  
+  has_many :comments, dependent: :destroy
 end
