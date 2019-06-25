@@ -8,8 +8,10 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments
+    @comments = @post.comments.order(id: :desc)
     @comment = Comment.new
+    @likes_count = Favorite.where(post_id: @post.id).count
+    @comments_count = Comment.where(post_id: @post.id).count
   end
   
   def new

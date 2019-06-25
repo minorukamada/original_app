@@ -12,8 +12,13 @@
     
     <%= render 'posts/posts_button', post: @post %>
     <hr>
-  
+  <p>ブックマーク数<%= @likes_count %></p>
+  <p>コメント数<%= @comments_count %></p>
   <div class="mt-5">
+    <%= form_with(model: [@post, @comment], local: true ) do |f| %>
+      <%= f.text_field :content %>
+      <%= f.submit 'コメントする' %>
+    <% end %>
   <p>コメント一覧</p>
     <% @comments.each do |c| %>
       <div>
@@ -24,10 +29,7 @@
     <% end %>
 
     
-    <%= form_with(model: [@post, @comment], local: true ) do |f| %>
-      <%= f.text_field :content %>
-      <%= f.submit 'コメントする' %>
-    <% end %>
+    
   </div>
   </div>
 </div>
