@@ -1,0 +1,9 @@
+<p>コメント一覧</p>
+<% comments.each do |comment| %>
+  <div>
+    <%=link_to comment.user.name, comment.user %><br>
+    <%= comment.content %><br>
+    <small class="text-muted"><%= comment.created_at %></small>
+    <hr>
+  </div>
+<% end %>
