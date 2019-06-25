@@ -7,23 +7,28 @@
     <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
     <p class="m-0"><small class="text-muted">カテゴリー：<%=@post.category %></small></p>
     <p class="m-0"><small class="text-muted">投稿日時：<%= @post.created_at %></small></p>
-    <p class="m-0"><%= @post.content %></p>
+    <p class="m-0">ブックマーク数<i class="fas fa-bookmark fa-fw"></i><%= @likes_count %></p>
+    <p>コメント数<i class="far fa-comment fa-fw"></i><%= @comments_count %></p>
+    <p><%= @post.content %></p>
 
     
     <%= render 'posts/posts_button', post: @post %>
     <hr>
-  <p>ブックマーク数<%= @likes_count %></p>
-  <p>コメント数<%= @comments_count %></p>
+  
   <div class="mt-5">
-    <%= form_with(model: [@post, @comment], local: true ) do |f| %>
-      <%= f.text_field :content %>
-      <%= f.submit 'コメントする' %>
+    
+    <% if logged_in? %>
+      <%= form_with(model: [@post, @comment], local: true ) do |f| %>
+        <%= f.text_field :content %>
+        <%= f.submit 'コメントする' %>
+      <% end %>
     <% end %>
   <p>コメント一覧</p>
     <% @comments.each do |c| %>
       <div>
         <%=link_to c.user.name %><br>
-        <%= c.content %>
+        <%= c.content %><br>
+        <small class="text-muted"><%= c.created_at %></small>
         <hr>
       </div>
     <% end %>
