@@ -1,6 +1,9 @@
 <% if logged_in? %>
   <%= form_with(model: [post, comment], local: true ) do |f| %>
-    <%= f.text_field :content %>
-    <%= f.submit 'コメントする' %>
+    <%= current_user.name %>
+    <div class="d-flex justify-content-between">
+    <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control" %>
+    <%= f.submit 'コメントする', class: 'btn btn-dark ml-3' %>
+    </div>
   <% end %>
 <% end %>

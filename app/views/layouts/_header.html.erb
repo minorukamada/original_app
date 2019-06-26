@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-secondary sticky-top">
   <a class="navbar-brand" href="/">Minimal Life</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
@@ -8,8 +8,9 @@
     <ul class="navbar-nav">
       <% if logged_in? %>
         <li class="nav-item dropdown">
-          <li class="nav-item"><%= link_to '新規投稿', new_post_path, class: 'nav-link' %></li>
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+          <li class="nav-item"><span class="nav-link"><i class="fas fa-bookmark fa-fw"></i><%= link_to 'ブックマーク一覧', likes_user_path(current_user) %></span></li>
+          <li class="nav-item"><span class="nav-link"><i class="fas fa-pen fa-fw"></i><%= link_to '新規投稿', new_post_path %></span></li>
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-fw"></i><%= current_user.name %></a>
           <ul class="dropdown-menu dropdown-menu-right">
             <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
             <li class="dropdown-divider"></li>

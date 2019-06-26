@@ -50,9 +50,9 @@ a:hover{
 
 .top img{
   width: 100%;
-  height: 500px;
+  height: 700px;
   object-fit: cover;
-  object-position: 0 30%;
+  object-position: 0 10%;
 }
 
 .top p{
