@@ -11,6 +11,11 @@
     <% end %>
 
     <%= render 'users/items'%>
-    <%= render 'users', users: @followers %>
+    <% if @user.followers.count > 0  %>
+      <%= render 'users', users: @followers %>
+    <% else %>
+      <p>フォローされていません。</p>
+    <% end %>
+    
   </div>
 </div>

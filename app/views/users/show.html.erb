@@ -11,6 +11,11 @@
     <% end %>
 
     <%= render 'users/items'%>
-    <%= render 'posts/posts', posts: @posts %>
+    <% if @user.posts.count > 0  %>
+      <%= render 'posts/posts', posts: @posts %>
+    <% else %>
+      <p>投稿はありません。</p>
+    <% end %>
+    
   </div>
 </div>

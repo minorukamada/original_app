@@ -11,6 +11,11 @@
     <% end %>
 
     <%= render 'users/items'%>
-    <%= render 'posts/likes', posts: @likes %>
+    <% if @user.likes.count > 0  %>
+      <%= render 'posts/likes', posts: @likes %>
+    <% else %>
+      <p>ブックマークしていません。</p>
+    <% end %>
+    
   </div>
 </div>
