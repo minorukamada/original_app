@@ -4,11 +4,8 @@
     <!--<%= post.inspect %>-->
     <div class="card-body p-2">
       <div class="d-flex justify-content-around">
-        <h5 class="card-title mb-1"><%=post.title %></h5>
-        <span class="badge  badge-light">
-          <%= render 'favorites/favorite_button', post: post %>
-          <!--<%= post.favorites.count %>-->
-        </span>
+        <h5 class="card-title mb-0"><%=post.title %></h5>
+        <%= render 'favorites/favorite_button', post: post %>
       </div>
       <p class="card-text m-0">投稿者：<%= link_to post.user.name, user_path(post.user) %></p>
       <p class="card-text m-0"><small class="text-muted">カテゴリー：<%=post.category %></small></p>
@@ -21,7 +18,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-start">
-        <p class="mb-0">ブックマーク数<i class="fas fa-bookmark fa-fw"></i><%= post.favorites.count %></p>
+        <p class="mb-0">お気に入り数<i class="fas fa-heart fa-fw"></i><%= post.favorites.count %></p>
         <p class="mb-0 ml-2">コメント数<i class="far fa-comment fa-fw"></i><%= post.comments.count %></p>
       </div>
     </div>
@@ -38,4 +35,8 @@ $('.card').on('click', function(event) {
     location.href = "/posts/" + id;
   }
 })
+
+$('.favorite_button').click(function (event) {
+  event.stopPropagation();
+});
 </script> 
