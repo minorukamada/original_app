@@ -27,16 +27,3 @@
   <% end %>
   <%= paginate posts %>
 </ul>
-
-<script> 
-$('.card').on('click', function(event) {
-  const id = $(this).attr("id").replace("post-", "");
-  if (event.target.tagName !== 'svg' && event.target.tagName !== 'A' && event.target.tagName !== 'path') {
-    location.href = "/posts/" + id;
-  }
-})
-
-$('.favorite_button').click(function (event) {
-  event.stopPropagation();
-});
-</script> 

@@ -22,5 +22,29 @@
     <%= render 'layouts/top' %>
     <%= render 'layouts/flash_messages' %>
     <%= yield %>
+    
+    <script> 
+      $('.card').on('click', function(event) {
+        const id = $(this).attr("id").replace("post-", "");
+        if (event.target.tagName !== 'svg' && event.target.tagName !== 'A' && event.target.tagName !== 'path') {
+          location.href = "/posts/" + id;
+        }
+      })
+
+      $('.favorite_button').click(function (event) {
+        event.stopPropagation();
+      });
+      
+      
+      $('.media').on('click', function(event) {
+        const id = $(this).attr("id").replace("user-", "");
+          location.href = "/users/" + id;
+      })
+      
+      $('.follow_button').click(function (event) {
+        event.stopPropagation();
+      });
+    </script> 
+    
   </body>
 </html>

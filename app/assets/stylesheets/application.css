@@ -162,3 +162,17 @@ a:hover{
 .post_show{
   background-color: white;
 }
+
+.like, .unlike{
+  width: 80px;
+}
+
+.follow, .unfollow{
+  width: 100px;
+}
+
+.unfollow:hover{
+  background-color: rgba(0,0,0,0.1);
+  color:red;
+}
+
