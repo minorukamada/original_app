@@ -60,3 +60,6 @@ group :production do
 end
 
 gem "jquery-rails"
+
+gem 'carrierwave'
+gem 'rmagick'

@@ -7,6 +7,9 @@
 
       <%= form_with(model: @user, local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
+        
+        <%=f.label :image,"ユーザー画像" %>
+      <%= f.file_field :image %>
       
       <div class="form-group">
         <%= f.label :name, 'Name' %>

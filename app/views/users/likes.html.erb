@@ -3,6 +3,13 @@
 
     <h1><%= @user.name %>の詳細ページ</h1>
     <p><%= @user.introduction %></p>
+    <p class="trim-image-to-circle">
+      <% if @user.image? %>
+        <%= image_tag @user.image.url %>
+      <% elsif %>
+        <%= image_tag '/images/fallback/no_image.png' %>
+      <% end %>
+    </p>
     <%= render 'relationships/follow_button', user: @user %>
     <% if current_user == @user %>
       <div class="btn btn-light">
