@@ -177,9 +177,9 @@ a:hover{
 }
 
 .trim-image-to-circle img{
-    width:  150px;
-    height: 150px;
-    border-radius: 50%;
+    width:  50px;
+    height: 50px;
+    border-radius: 10%;
     object-fit: cover;
     object-position: 50% 50%;
 }

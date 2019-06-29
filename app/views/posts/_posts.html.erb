@@ -3,24 +3,27 @@
   <li class="card" id="post-<%= post.id %>">
     <!--<%= post.inspect %>-->
     <div class="card-body p-2">
-      <div class="d-flex justify-content-around">
-        <h5 class="card-title mb-0"><%=post.title %></h5>
-        <%= render 'favorites/favorite_button', post: post %>
+      <div class="d-flex">
+        <p class="trim-image-to-circle m-0">
+          <% if post.user.image? %>
+            <%= image_tag post.user.image.url %>
+          <% elsif %>
+            <%= image_tag '/images/fallback/no_image.png' %>
+          <% end %>
+        </p>
+        <div class="pl-1">
+          <h5 class="card-title mb-0"><%=post.title %></h5>
+          <p class="card-text m-0">投稿者：<%= link_to post.user.name, user_path(post.user) %></p>
+        </div>
       </div>
-      <p class="card-text m-0">投稿者：<%= link_to post.user.name, user_path(post.user) %></p>
+        
       <p class="card-text m-0"><small class="text-muted">カテゴリー：<%=post.category %></small></p>
-      <div class="d-flex justify-content-between">
-        <div>
-          <p class="card-text m-0"><small class="text-muted">投稿日時：<%= post.created_at %></small></p>
-        </div>
-        <div>
-          <%= render 'posts/posts_button', post: post %>
-        </div>
-      </div>
+      <p class="card-text m-0"><small class="text-muted">投稿日時：<%= post.created_at %></small></p>
       <div class="d-flex justify-content-start">
-        <p class="mb-0">お気に入り数<i class="fas fa-heart fa-fw"></i><%= post.favorites.count %></p>
-        <p class="mb-0 ml-2">コメント数<i class="far fa-comment fa-fw"></i><%= post.comments.count %></p>
+        <p class="mb-0"><small class="text-muted">お気に入り数<i class="fas fa-heart fa-fw"></i><%= post.favorites.count %></small></p>
+        <p class="mb-0 ml-2"><small class="text-muted">コメント数<i class="far fa-comment fa-fw"></i><%= post.comments.count %></small></p>
       </div>
+        <!--<%= render 'favorites/favorite_button', post: post %>-->
     </div>
     
   </li>
