@@ -41,6 +41,17 @@ a:hover{
   text-decoration: none;
 }
 
+.post_user_name a{
+  color: #6c757d; 
+  text-decoration : underline;
+}
+
+.post_user_name a:hover{
+  color: #212529;
+  text-decoration: none;
+}
+
+#6c757d
 
 /*"/"*/
 
@@ -72,32 +83,33 @@ a:hover{
 }
 
 /*"posts/post"*/
-.card-title{
+.post-title{
   width: 100%;
+  overflow: hidden;
+}
+
+.post-title h5{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-
-.card{
+.post-index{
   border-radius: 0;
   position: relative;
 }
 
+/*.post-index:after {*/
+/*	position: absolute;*/
+/*	top: 0;*/
+/*	left: 0;*/
+/*	border-right: 20px solid transparent;*/
+/*	border-top: 20px solid red; */
+/*	content: "";*/
+/*	opacity: 0.5;*/
+/*}*/
 
-
-.card:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-right: 20px solid transparent;
-	border-top: 20px solid red; 
-	content: "";
-	opacity: 0.5;
-}
-
-.card:hover, .media:hover{
+.post-index:hover, .media:hover{
   cursor: pointer;
   background-color: #DDD;
   z-index: 2;
@@ -163,10 +175,6 @@ a:hover{
   background-color: white;
 }
 
-.like, .unlike{
-  width: 80px;
-}
-
 .follow, .unfollow{
   width: 100px;
 }
@@ -182,4 +190,16 @@ a:hover{
     border-radius: 10%;
     object-fit: cover;
     object-position: 50% 50%;
+}
+
+.trim-image-to-circle-lg img{
+    width:  200px;
+    height: 200px;
+    border-radius: 10%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.hidden{
+  display: none;
 }

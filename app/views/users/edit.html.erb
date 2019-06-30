@@ -9,7 +9,21 @@
         <%= render 'layouts/error_messages', model: f.object %>
         
         <%=f.label :image,"ユーザー画像" %>
-      <%= f.file_field :image %>
+        
+        <div class="trim-image-to-circle-lg m-0">
+          <img id="avatar_img_prev" src="#" class="hidden">
+          <% if current_user.persisted? && current_user.image? %>
+            <%= image_tag current_user.image.url, class: 'avatar_present_img' %>
+          <% elsif %>
+            <%= image_tag ('/no_user_image.png'), class: 'avatar_present_img' %>
+          <% end %>
+        </div>
+        <%= f.file_field :image, id: 'post_img' %>
+        <%= f.check_box :remove_image %>画像を削除する
+        
+      
+        
+        
       
       <div class="form-group">
         <%= f.label :name, 'Name' %>
@@ -45,3 +59,24 @@
     <% end %>
   </div>
 </div>
+
+<script>
+$( document ).on('turbolinks:load', function() {
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+ 
+      reader.onload = function (e) {
+        $('#avatar_img_prev').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+ 
+  $("#post_img").change(function(){
+    $('#avatar_img_prev').removeClass('hidden');
+    $('.avatar_present_img').remove();
+    readURL(this);
+  });
+});
+</script>

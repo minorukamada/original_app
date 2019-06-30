@@ -1,4 +1,3 @@
-$("#post-<%= @deleted_post_id %>").remove();
-
-let count = $('#past-post-count').text();
+$("#post-<%= @deleted_post_id %>").fadeOut('fast');
+var count = $('#past-post-count').text();
 $('#past-post-count').text(String(parseInt(count)-1));

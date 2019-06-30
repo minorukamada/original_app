@@ -3,13 +3,18 @@
     <% if current_user.liking?(post) %>
         <%= form_with(model: current_user.favorites.find_by(post_id: post.id), remote: true, method: :delete) do |f| %>
           <%= hidden_field_tag :post_id, post.id %>
-          <%= f.submit 'いいね済', class: 'btn btn-dark btn-sm unlike' %>
+          <%= button_tag(type: "submit", class: 'btn btn-default unlike') do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
         <% end %>
     <% else %>
       <%= form_with(model: current_user.favorites.build, remote: true) do |f| %>
         <%= hidden_field_tag :post_id, post.id %>
-        <%= f.submit 'いいね', class: 'btn btn-outline-dark btn-sm like' %>
+        <%= button_tag(type: "submit", class: 'btn btn-default like') do %>
+          <i class="far fa-heart"></i>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
 </div>
+

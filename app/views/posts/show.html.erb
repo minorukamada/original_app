@@ -1,17 +1,26 @@
 <div class="row justify-content-center">
   <div class="col-md-6 post_show mt-3">
-    <div class="d-flex justify-content-between">
-      <h3><%= @post.title %></h3>
-      <%= render 'favorites/favorite_button', post: @post %>
+    <div class="d-flex">
+      <%= render 'users/user_image', user: @post.user %>
+      
+      <div class="pl-1 post-title">
+        
+        <div class="d-flex justify-content-content">
+        <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
+        
+          <p class="m-0 ml-3">投稿日：<%= @post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></p>
+          <p class="m-0 ml-3"><i class="fas fa-heart fa-fw"></i><%= @post.favorites.count %></p>
+          <p class="m-0 ml-3"><i class="far fa-comment fa-fw"></i><%= @post.comments.count %></p>
+        </div>
+        <!--<%= render 'favorites/favorite_button', post: @post %>-->
+      </div>
+      
     </div>
-    
-    <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
-    <p class="m-0"><small class="text-muted">カテゴリー：<%=@post.category %></small></p>
-    <p class="m-0"><small class="text-muted">投稿日時：<%= @post.created_at %></small></p>
-    <p class="m-0">ブックマーク数<i class="fas fa-bookmark fa-fw"></i><%= @likes_count %></p>
-    <p>コメント数<i class="far fa-comment fa-fw"></i><%= @comments_count %></p>
+        
+      
     <%= render 'posts/posts_button', post: @post %>
-    <p><%= @post.content %></p>
+    <h5 class="mb-0"><%=@post.title %></h5>
+    <p><%= simple_format @post.content %></p>
 
     
     

@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <div class="d-flex justify-content-between">
-        <p class="h5">新着投稿</p>
+    <div class="col-md-6 p-0">
+      <div class="p-2 d-flex justify-content-between bg-white">
+        <p class="h5 m-0">新着投稿</p>
         <%= link_to 'もっと見る', posts_path %>
       </div>
+      <hr class="m-0">
       <%= render 'posts/posts', posts: @posts %>
     </div>
     <div class="col-md-6">
@@ -17,4 +18,4 @@
   </div>
 </div>
 
-<%= render 'layouts/footer' %>
+<!--<%= render 'layouts/footer' %>-->

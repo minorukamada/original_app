@@ -65,11 +65,21 @@ class UsersController < ApplicationController
     counts(@user)
   end
   
+  def search
+    @users = User.order(id: :desc).page(params[:page]).per(25).search(params[:search])
+    if logged_in?
+      @posts = current_user.feed_posts.order(id: :desc).page(params[:page])
+    else
+      @post = Post.order(id: :desc).page(params[:page]).per(25)
+    end
+    render :index
+  end
+  
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduction, :image)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduction, :image, :remove_image)
   end
   
   def correct_user

@@ -2,13 +2,7 @@
   <ul class="list-unstyled">
     <% users.each do |user| %>
       <li class="media" id="user-<%= user.id %>">
-        <p class="trim-image-to-circle">
-          <% if user.image? %>
-            <%= image_tag user.image.url %>
-          <% elsif %>
-            <%= image_tag '/images/fallback/no_image.png' %>
-          <% end %>
-        </p>
+        <%= render 'users/user_image', user: user %>
         <div class="media-body">
           <h5 class="mt-0"><%= user.name %></h5>
           <p class="user_introduction"><%= user.introduction %></p>
