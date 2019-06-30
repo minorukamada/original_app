@@ -56,23 +56,27 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 0 0;
+  object-position: 50% 50%;
 }
 
 .flex-container-item p{
   position: absolute;
-  top: 70%;
-  left: 5%;
-  margin:0;
-  padding:0;
+  top: 50%;
+  left: 0;
+  margin: 0;
+  color: white;
   font-weight: bold;
   font-size: 1em;
   font-family :Quicksand, sans-serif;
+  text-shadow: 1px 1px 1px black;
+  word-break:break-all;
+  word-wrap:break-word;
 }
+
 
 .flex-container-item:hover{
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 body{
@@ -119,11 +123,6 @@ a:hover{
   overflow: hidden;
 }
 
-.post-title h5{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 
 .post-index{
   border-radius: 0;
@@ -218,7 +217,7 @@ a:hover{
 .trim-image-to-circle img{
     width:  50px;
     height: 50px;
-    border-radius: 10%;
+    border-radius: 5%;
     object-fit: cover;
     object-position: 50% 50%;
 }
@@ -226,7 +225,20 @@ a:hover{
 .trim-image-to-circle-lg img{
     width:  200px;
     height: 200px;
-    border-radius: 10%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.trim-post-image img{
+    width:  150px;
+    height: 100px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.trim-post-image-lg img{
+    width:  100%;
+    /*height: 200px;*/
     object-fit: cover;
     object-position: 50% 50%;
 }
@@ -236,5 +248,24 @@ a:hover{
 }
 
 
+.navbar{
+  border-bottom: solid 1px gray;
+}
 
+.post-title{
+  position: relative;
+}
+
+.post-bottom{
+  position: absolute;
+  bottom: 0;
+}
+
+.new_posts, .recommrnd-users{
+  border-bottom: double 3px #212529;
+}
+
+/*.new_posts h5, .recommrnd-users h5{*/
+/*  font-weight: bold;*/
+/*}*/
 

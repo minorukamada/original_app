@@ -1,6 +1,7 @@
 class ToppagesController < ApplicationController
   def index
-    @posts = Post.includes(:user).includes(favorites: :user).order(id: :desc).page(params[:page]).per(4)
-    @users = User.includes(:posts).order(id: :desc).page(params[:page]).per(5)
+    @posts_header = Post.includes(:user).order("RAND()").page(params[:page]).per(4)
+    @posts = Post.includes(:user).order(id: :desc).page(params[:post_page]).per(20)
+    @users = User.includes(:posts).order(id: :desc).page(params[:user_page]).per(5)
   end
 end

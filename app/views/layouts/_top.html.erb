@@ -1,6 +1,17 @@
-<% if controller_name == "toppages" && controller.action_name == "index" && (params[:page] == 1 || params[:page].blank?) %>
-  <div class="top mb-5">
-    <%= image_tag('/top.jpg') %>
-    <p>minimal life<br>maximum happiness</p>
-  </div>
+<% if controller_name == "toppages" && controller.action_name == "index" %>
+  <ul class="list-unstyled m-0" id="flex-container">
+    <% @posts_header.each do |post_header| %>
+      <li class="flex-container-item">
+        <%= link_to post_header do%>
+          
+          <% if post_header.image? %>
+            <%= image_tag post_header.image.url %>
+          <% elsif %>
+            <%= image_tag ('/no_post_image.png') %>
+          <% end %>
+        <% end %>
+        <p class="p-2"><%=post_header.title %></p>
+      </li>
+    <% end %>
+  </ul>
 <% end %>

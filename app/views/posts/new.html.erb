@@ -2,8 +2,10 @@
   <div class="col-md-6">
     <%= form_with(model: @post, local: true) do |f| %>
       <div class="form-group">
+        <%=f.label :image,"サムネイル画像" %>
+        <%= f.file_field :image %>
         <%= f.label :title %>
-        <%= f.text_area :title, placeholder: "タイトルを入力", class: 'form-control' %>
+        <%= f.text_field :title, placeholder: "タイトルを入力", class: 'form-control' %>
         <%= f.label :category %>
         <div>
           <label><%= f.radio_button :category, "衣" %> 衣 </label>
@@ -12,7 +14,7 @@
           <label><%= f.radio_button :category, "その他" %> その他 </label>
         </div>
         <%= f.label :content %>
-        <%= f.text_area :content, placeholder: "本文を入力", class: 'form-control', rows: 10 %>
+        <%= f.text_area :content, placeholder: "本文を入力", class: 'form-control', rows: 15 %>
       </div>
       <div class="row justify-content-center">
         <%= link_to "戻る", :back, class: 'btn btn-outline-secondary'%>

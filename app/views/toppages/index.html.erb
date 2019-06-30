@@ -1,29 +1,19 @@
-<ul class="list-unstyled m-0" id="flex-container">
-  <% @posts.each do |post| %>
-    <li class="flex-container-item">
-      <%= image_tag('/top.jpg') %>
-      <p><%=post.title %></p>
-    </li>
-  <% end %>
-</ul>
-
-<div class="container">
+<div class="container pt-5">
   <div class="row">
-    <div class="col-md-6 p-0">
-      <div class="p-2 d-flex justify-content-between bg-white">
-        <p class="h5 m-0">新着投稿</p>
+    <div class="col-md-8 p-0">
+      <div class="p-2 d-flex justify-content-between new_posts">
+        <h5 class="m-0">新着投稿</h5>
         <%= link_to 'もっと見る', posts_path %>
       </div>
-      <hr class="m-0">
       <%= render 'posts/posts', posts: @posts %>
     </div>
-    <!--<div class="col-md-6">-->
-    <!--  <div class="d-flex justify-content-between">-->
-    <!--  <p class="h5">おすすめユーザー</p>-->
-    <!--  <%= link_to 'もっと見る', users_path %>-->
-    <!--  </div>-->
-    <!--  <%= render 'users/users', users: @users %>-->
-    <!--</div>-->
+    <div class="col-md-4">
+      <div class="p-2 d-flex justify-content-between recommrnd-users">
+        <h5 class="m-0">おすすめユーザー</h5>
+        <%= link_to 'もっと見る', users_path %>
+      </div>
+      <%= render 'users/users', users: @users %>
+    </div>
   </div>
 </div>
 
