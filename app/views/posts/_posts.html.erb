@@ -1,4 +1,4 @@
-<ul class="list-unstyled">
+<ul class="list-unstyled skill-list jscroll">
   <% posts.each do |post| %>
   <li class="post-index" id="post-<%= post.id %>">
     <div class="p-2">
@@ -11,7 +11,12 @@
           <div class="post-bottom">
             <div class="d-flex justify-content-content">
               <p class="m-0 post_user_name"><small class="text-muted">投稿者：<%= link_to post.user.name, user_path(post.user) %></small></p>
-              <p class="m-0 ml-3"><small class="text-muted">投稿日：<%= post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></small></p>
+              <p class="m-0 ml-3">
+                <small class="text-muted">
+                  投稿日：<%= post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %>
+                </small>
+                <small class="text-muted">・<%= time_ago_in_words(post.created_at) %></small>
+              </p>
             </div>
             <div>
               <div class="d-flex justify-content-content">
