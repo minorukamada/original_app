@@ -1,27 +1,15 @@
-<div class="row justify-content-center">
-  <div class="col-md-6">
-
-    <h1><%= @user.name %>の詳細ページ</h1>
-    <p><%= @user.introduction %></p>
-    <div class="trim-image-to-circle-lg m-0">
-      <% if @user.image? %>
-        <%= image_tag @user.image.url %>
-      <% elsif %>
-        <%= image_tag ('/no_user_image.png') %>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render 'users/user_top' %>
+    </div>
+    <div class="col-md-8">
+      <%= render 'users/items'%>
+      <% if @user.posts.count > 0  %>
+        <%= render 'posts/posts', posts: @posts %>
+      <% else %>
+        <p class="pt-3">投稿はありません。</p>
       <% end %>
     </div>
-    <%= render 'relationships/follow_button', user: @user %>
-    <% if current_user == @user %>
-      <div class="btn btn-light">
-        <%=link_to 'ユーザー情報を編集する', edit_user_path(@user) %>
-      </div>
-    <% end %>
-
-    <%= render 'users/items'%>
-    <% if @user.posts.count > 0  %>
-      <%= render 'posts/posts', posts: @posts %>
-    <% else %>
-      <p>投稿はありません。</p>
-    <% end %>
   </div>
 </div>

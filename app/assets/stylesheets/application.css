@@ -155,59 +155,43 @@ a:hover{
   width: 100%;
 }
 
-#user_items .nav-item{
-  /*border-top: solid 1px gray;*/
-  /*border-right: solid 1px gray;*/
-  /*border-left: solid 1px gray;*/
+#user_items{
+  border-bottom: double 3px #212529;
+  padding: 0 0 10px 0;
+}
+
+#user_items .nav-item a:hover{
+  background-color: #AAA;
   border: none;
-  border-radius: 20px 20px 0 0;
+  margin: 0;
+  color: red;
 }
 
-#user_items .nav-item:hover{
-  background-color: white;
+#user_items .nav-item a{
+  border: none;
+  margin: 0;
+  text-decoration : none;
 }
 
-#user_items .nav-link{
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
+.nav-tabs .nav-link {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 #user_items .nav-link.active{
-  background-color: white;
-  border-radius: 20px 20px 0 0;
-}
-
-#user_items .nav-link{
+  background-color: #DDD;
   border: none;
-}
-.nav-tabs {
-  border-bottom: none;
-}
-
-.user_item {
-  background-color: white;
 }
 
 .media{
   background-color: white;
 }
 
-.nav-tabs .nav-item > a{
-  text-decoration: none;
-}
-
-.nav-tabs .nav-item > a:hover{
-  color: #212529;
-  text-decoration: none;
-}
-
 .post_show{
   background-color: white;
 }
 
-.follow, .unfollow{
-  width: 100px;
-}
+
 
 .unfollow:hover{
   background-color: rgba(0,0,0,0.1);
@@ -215,32 +199,33 @@ a:hover{
 }
 
 .trim-image-to-circle img{
-    width:  50px;
-    height: 50px;
-    border-radius: 5%;
-    object-fit: cover;
-    object-position: 50% 50%;
+  width:  50px;
+  height: 50px;
+  border-radius: 3%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .trim-image-to-circle-lg img{
-    width:  200px;
-    height: 200px;
-    object-fit: cover;
-    object-position: 50% 50%;
+  width:  300px;
+  height: 300px;
+  border-radius: 3%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .trim-post-image img{
-    width:  150px;
-    height: 100px;
-    object-fit: cover;
-    object-position: 50% 50%;
+  width:  120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .trim-post-image-lg img{
-    width:  100%;
-    /*height: 200px;*/
-    object-fit: cover;
-    object-position: 50% 50%;
+  width:  100%;
+  /*height: 200px;*/
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .hidden{
@@ -257,8 +242,9 @@ a:hover{
 }
 
 .post-bottom{
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  /*position: absolute;*/
+  /*bottom: 0;*/
 }
 
 .new_posts, .recommrnd-users{
@@ -269,4 +255,66 @@ a:hover{
 /*  font-weight: bold;*/
 /*}*/
 
+.title-search, .user-search{
+  width: 50%;
+}
 
+.comment-form{
+  width: 100%;
+}
+
+p{
+  margin-bottom: 0;
+}
+
+ul{
+  padding: 0;
+}
+
+.user-edit-button{
+  width: 100%;
+  /*background-color: red;*/
+}
+
+.user-edit-button a{
+  display:block;
+  padding:10px;
+  background-color: #DDD;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.user-edit-button a:hover{
+  background-color: #AAA;
+  color: red;
+}
+
+.follow_button{
+  width: 100%;
+  cursor: pointer;
+  /*background-color: red;*/
+}
+
+.follow_button input{
+  width: 100%;
+  display:block;
+  padding:10px;
+  background-color: #DDD;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.follow_button input:hover{
+  background-color: #AAA;
+  color: red;
+}
+
+
+.my-small{
+  font-size: 0.8em 
+}

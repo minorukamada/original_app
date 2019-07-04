@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs nav-justified" id="user_items">
-  <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">過去の投稿  <span id="past-post-count" class="badge badge-pill badge-light"><%= @count_posts %></span></a></li>
-  <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り  <span class="badge badge-pill badge-light"><%= @count_likes %></span></a></li>
-  <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー  <span class="badge badge-pill badge-light"><%= @count_followings %></span></a></li>
-  <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー  <span class="badge badge-pill badge-light"><%= @count_followers %></span></a></li>
+  <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">過去の投稿<h3><%= @count_posts %></h3></a></li>
+  <li class="nav-item"><a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">お気に入り<h3><%= @count_likes %></h3></a></li>
+  <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー<h3><%= @count_followings %></h3></a></li>
+  <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー<h3><%= @count_followers %></h3></a></li>
 </ul>

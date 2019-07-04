@@ -7,9 +7,7 @@
 
       <%= form_with(model: @user, local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
-        
         <%=f.label :image,"ユーザー画像" %>
-        
         <div class="trim-image-to-circle-lg m-0">
           <img id="avatar_img_prev" src="#" class="hidden">
           <% if current_user.persisted? && current_user.image? %>

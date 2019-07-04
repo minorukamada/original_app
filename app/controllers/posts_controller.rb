@@ -51,11 +51,17 @@ class PostsController < ApplicationController
     # flash[:success] = 'メッセージを削除しました。'
     # redirect_to root_url
   end
+  
+  def timeline
+    @user = current_user
+    @posts = @user.feed_posts.order(id: :desc).page(params[:page]).per(100)
+  end
+  
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :category, :image)
+    params.require(:post).permit(:title, :content, :category, :image, :remove_image)
   end
   
   def correct_user

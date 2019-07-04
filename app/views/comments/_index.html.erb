@@ -1,13 +1,14 @@
 <% comments.each do |comment| %>
   <div class="p-2">
-    <div class="d-flex justify-content-content">
+    <div class="d-flex justify-content">
       <%= render 'users/user_image', user: comment.user %>
       <div class="pl-3">
         <%=link_to comment.user.name, comment.user %>
         <p class="m-0"><small class="text-muted"><%= comment.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></small></p>
+        <%= simple_format comment.content %>
       </div>
     </div>
-    <%= simple_format comment.content %>
+    
   </div>
   <hr class="m-0">
 <% end %>

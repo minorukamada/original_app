@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   
   resources :posts do
     resources :comments
+    member do
+      get :timeline
+    end
   end
   
   resources :relationships, only: [:create, :destroy]

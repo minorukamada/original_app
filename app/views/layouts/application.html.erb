@@ -22,7 +22,6 @@
     <%= render 'layouts/top' %>
     <%= render 'layouts/flash_messages' %>
     <%= yield %>
-    
     <script> 
       $('.post-index').on('click', function(event) {
         const id = $(this).attr("id").replace("post-", "");

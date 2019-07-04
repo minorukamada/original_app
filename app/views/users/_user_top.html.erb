@@ -1,0 +1,14 @@
+
+<div class="square-content">
+  <div class="trim-image-to-circle-lg m-0">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url %>
+    <% elsif %>
+      <%= image_tag ('/no_user_image.png') %>
+    <% end %>
+  </div>
+</div>
+<h2><%= @user.name %></h2>
+<p><%= @user.introduction %></p>
+<%= render 'relationships/follow_button', user: @user %>
+<%= render 'users/user_edit_button', user: @user %>

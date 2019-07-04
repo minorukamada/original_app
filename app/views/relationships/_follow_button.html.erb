@@ -1,30 +1,21 @@
-<% if logged_in? %>
-  <div id="follow_<%= user.id %>" class="follow_button">
+<% if logged_in? && controller.action_name == "show" %>
+  <div id="follow_<%= user.id %>" class="follow_button mt-3">
     <% unless current_user == user %>
       <% if current_user.following?(user) %>
         <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), remote: true, method: :delete) do |f| %>
           <%= hidden_field_tag :follow_id, user.id %>
-          <%= f.submit 'フォロー中', class: 'btn btn-dark btn-sm unfollow' %>
+          <div class="unfollow">
+            <%= f.submit 'フォロー中' %>
+          </div>
         <% end %>
       <% else %>
         <%= form_with(model: current_user.relationships.build, remote: true) do |f| %>
           <%= hidden_field_tag :follow_id, user.id %>
-          <%= f.submit 'フォローする', class: 'btn btn-outline-dark btn-sm follow' %>
+          <div class="follow">
+            <%= f.submit 'フォローする' %>
+          </div>
         <% end %>
       <% end %>
     <% end %>
   </div>
 <% end %>
-
-<script>
-
-
-$('unfollow').hover(
-    function() {
-        
-        //マウスカーソルが重なった時の処理
-        $('unfollow').value("変更後の文章");
-        
-    }
-);
-</script>
