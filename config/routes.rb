@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
   
+  get 'ranking', to: 'posts#ranking'
+  
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
 end

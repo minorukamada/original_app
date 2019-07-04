@@ -57,6 +57,10 @@ class PostsController < ApplicationController
     @posts = @user.feed_posts.order(id: :desc).page(params[:page]).per(100)
   end
   
+  def ranking
+    @posts = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
+  end
+  
 
   private
 

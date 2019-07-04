@@ -1,0 +1,7 @@
+<ul class="nav nav-tabs nav-justified" id="user_items">
+  <li class="nav-item"><a href="<%= posts_path %>" class="nav-link <%= 'active' if current_page?(posts_path) %>">新着投稿</a></li>
+  <% if logged_in? %>
+    <li class="nav-item"><a href="<%= timeline_post_path(current_user) %>" class="nav-link <%= 'active' if current_page?(timeline_post_path(current_user)) %>">タイムライン</a></li>
+  <% end %>
+  <li class="nav-item"><a href="<%= ranking_path %>" class="nav-link <%= 'active' if current_page?(ranking_path) %>">ランキング</a></li>
+</ul>
