@@ -2,14 +2,14 @@
   <div id="follow_<%= user.id %>" class="follow_button mt-3">
     <% unless current_user == user %>
       <% if current_user.following?(user) %>
-        <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), remote: true, method: :delete) do |f| %>
+        <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), local: true, method: :delete) do |f| %>
           <%= hidden_field_tag :follow_id, user.id %>
           <div class="unfollow">
             <%= f.submit 'フォロー中' %>
           </div>
         <% end %>
       <% else %>
-        <%= form_with(model: current_user.relationships.build, remote: true) do |f| %>
+        <%= form_with(model: current_user.relationships.build, local: true) do |f| %>
           <%= hidden_field_tag :follow_id, user.id %>
           <div class="follow">
             <%= f.submit 'フォローする' %>

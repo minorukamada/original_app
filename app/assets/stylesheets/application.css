@@ -293,28 +293,28 @@ ul{
   color: red;
 }
 
-/*.follow_button{*/
-/*  width: 100%;*/
-/*  cursor: pointer;*/
-/*}*/
+.follow_button{
+  width: 100%;
+  cursor: pointer;
+}
 
-/*.follow_button input{*/
-/*  width: 100%;*/
-/*  display:block;*/
-/*  padding:10px;*/
-/*  background-color: #DDD;*/
-/*  text-decoration: none;*/
-/*  border-radius: 5px;*/
-/*  text-align: center;*/
-/*  margin: 0;*/
-/*  border: none;*/
-/*  cursor: pointer;*/
-/*}*/
+.follow_button input{
+  width: 100%;
+  display:block;
+  padding:10px;
+  background-color: #DDD;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
 
-/*.follow_button input:hover{*/
-/*  background-color: #AAA;*/
-/*  color: red;*/
-/*}*/
+.follow_button input:hover{
+  background-color: #AAA;
+  color: red;
+}
 
 
 .my-small{
