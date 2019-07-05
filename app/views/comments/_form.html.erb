@@ -1,4 +1,4 @@
-<div class="pl-2 pt-3 pb-3 pr-2">
+<div class="pl-2 pt-3 pb-3 pr-2 comment-form">
   <% if logged_in? %>
     <%= form_with(model: [post, comment], local: true ) do |f| %>
       <div class="d-flex justify-content">
@@ -6,7 +6,7 @@
         <div class="pl-3 flex-fill">
           <p class="m-0"><%= current_user.name %>としてコメントを投稿</p>
           <div class="d-flex justify-content-start">
-            <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control comment-form" %>
+            <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control comment-formarea" %>
             <%= f.submit '投稿', class: 'btn btn-dark' %>
           </div>
         </div>

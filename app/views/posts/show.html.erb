@@ -20,10 +20,11 @@
     <p><%= simple_format @post.content %></p>
     <hr>
     
-    <p>コメント<i class="far fa-comment fa-fw"></i><%= @post.comments.count %></p>
-      <div class="bg-light">
+    
+      <div class="">
         <%= render 'comments/form', post: @post, comment: @comment %>
       </div>
+      <p>コメント<i class="far fa-comment fa-fw"></i><%= @post.comments.count %></p>
       <%= render 'comments/index', comments: @comments %>
     
   </div>

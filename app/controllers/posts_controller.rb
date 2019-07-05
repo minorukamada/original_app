@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   # before_action :require_user_logged_in
   before_action :correct_user, only: [:edit, :update, :destroy]
+  impressionist :actions=> [:show]
   
   def index
     @posts = Post.order(id: :desc).page(params[:page]).per(10).search(params[:search])
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @likes_count = Favorite.where(post_id: @post.id).count
     @comments_count = Comment.where(post_id: @post.id).count
+    impressionist(@post, nil, unique: [:session_hash])
   end
   
   def new

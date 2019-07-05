@@ -63,3 +63,5 @@ gem "jquery-rails"
 
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'impressionist'

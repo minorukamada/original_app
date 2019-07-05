@@ -164,7 +164,7 @@ a:hover{
   background-color: #AAA;
   border: none;
   margin: 0;
-  color: red;
+  color: blue;
 }
 
 #user_items .nav-item a{
@@ -193,15 +193,15 @@ a:hover{
 
 
 
-.unfollow:hover{
-  background-color: rgba(0,0,0,0.1);
-  color:red;
-}
+/*.unfollow:hover{*/
+/*  background-color: rgba(0,0,0,0.1);*/
+/*  color:red;*/
+/*}*/
 
 .trim-image-to-circle img{
   width:  50px;
   height: 50px;
-  border-radius: 3%;
+  border-radius: 50%;
   object-fit: cover;
   object-position: 50% 50%;
 }
@@ -217,12 +217,14 @@ a:hover{
 .trim-post-image img{
   width:  120px;
   height: 120px;
+  border-radius: 3%;
   object-fit: cover;
   object-position: 50% 50%;
 }
 
 .trim-post-image-lg img{
   width:  100%;
+  /*border-radius: 3%;*/
   /*height: 200px;*/
   object-fit: cover;
   object-position: 50% 50%;
@@ -259,8 +261,9 @@ a:hover{
   width: 50%;
 }
 
-.comment-form{
+.comment-formarea{
   width: 100%;
+  background-color: white;
 }
 
 p{
@@ -290,31 +293,34 @@ ul{
   color: red;
 }
 
-.follow_button{
-  width: 100%;
-  cursor: pointer;
-  /*background-color: red;*/
-}
+/*.follow_button{*/
+/*  width: 100%;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.follow_button input{
-  width: 100%;
-  display:block;
-  padding:10px;
-  background-color: #DDD;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  margin: 0;
-  border: none;
-  cursor: pointer;
-}
+/*.follow_button input{*/
+/*  width: 100%;*/
+/*  display:block;*/
+/*  padding:10px;*/
+/*  background-color: #DDD;*/
+/*  text-decoration: none;*/
+/*  border-radius: 5px;*/
+/*  text-align: center;*/
+/*  margin: 0;*/
+/*  border: none;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.follow_button input:hover{
-  background-color: #AAA;
-  color: red;
-}
+/*.follow_button input:hover{*/
+/*  background-color: #AAA;*/
+/*  color: red;*/
+/*}*/
 
 
 .my-small{
   font-size: 0.8em 
+}
+
+.comment-form{
+  background-color: #DDD;
 }

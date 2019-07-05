@@ -69,6 +69,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jquery-rails (4.3.3)
@@ -197,6 +199,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.2)
+  impressionist
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
