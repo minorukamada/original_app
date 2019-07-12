@@ -1,19 +1,16 @@
-<div class="container-fluid">
-  <div class="row justify-content-end">
-    <% if current_user == post.user && controller.action_name == "show"%>
-      <!--編集ボタン-->
-      <div>
-        <%=link_to edit_post_path(post), class: "btn btn-default" do %>
-          <i class="far fa-edit"></i>
-        <% end %>
-      </div>
-      <!--削除ボタン-->
-      <div id="deleted_button">
-        <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default", remote: true do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      </div>
-      <%= render 'favorites/favorite_button', post: post %>
+<%= render 'favorites/favorite_button', post: post %>
+<% if current_user == post.user %>
+  <!--編集ボタン-->
+  <div class="mt-1">
+    <%=link_to edit_post_path(post), class: "btn btn-default post-edit-button" do %>
+      <i class="far fa-edit fa-lg fa-fw"></i>
     <% end %>
   </div>
-</div>
+  <!--削除ボタン-->
+  <div id="deleted_button" class="mt-1">
+    <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default post-delete-button", remote: true do %>
+      <i class="far fa-trash-alt fa-lg fa-fw"></i>
+    <% end %>
+  </div>
+  
+<% end %>

@@ -83,17 +83,97 @@ body{
   background-color: white;
 }
 
-
-.navbar-brand{
-  text-decoration : none;
+.menu {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+  background-color: white;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: solid 1px black;
 }
 
-.navbar-nav li a{
-  text-decoration : none;
+.menu > li{
+  height: 60px;
+  line-height: 60px;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
 }
 
-.navbar-nav li a{
+.navbar-item{
+  width: 60px;
+}
+
+.navbar-item a{
+  display: block;
+}
+
+.title-logo a{
+  width: 200px;
   text-decoration : none;
+  font-size: 20px;
+  line-height: 60px;
+  font-family: 'arial black';
+}
+
+.menu__second-level{
+  text-align: left;
+  padding: 0;
+  
+}
+
+.menu__second-level a:hover{
+  background-color: #00558F;
+  color: white;
+}
+
+.menu__second-level a{
+  text-decoration : none;
+  /*background-color: blue;*/
+  padding-right: 10px;
+  padding-left: 10px;
+  /*border: solid 1px red;*/
+}
+
+.title-logo a:hover{
+  color: #212529;
+  
+}
+
+.menu > .navbar-item {
+  background: white;
+  border-left: solid 1px white;
+  border-bottom: solid 1px black;
+}
+
+ul.menu__second-level {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  list-style: none;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+li.navbar-icon ul.menu__second-level {
+  position: absolute;
+  top: 60px;
+  left: -141px;
+  width: 200px;
+  background: #A4C6FF;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+li.navbar-item:hover ul.menu__second-level {
+  top: 60px;
+  visibility: visible;
+  opacity: 0.9;
 }
 
 a{
@@ -161,10 +241,10 @@ a:hover{
 }
 
 #user_items .nav-item a:hover{
-  background-color: #AAA;
+  background-color: #00558F;
   border: none;
   margin: 0;
-  color: blue;
+  color: white;
 }
 
 #user_items .nav-item a{
@@ -179,7 +259,8 @@ a:hover{
 }
 
 #user_items .nav-link.active{
-  background-color: #DDD;
+  background-color: #00558F;
+  color: white;
   border: none;
 }
 
@@ -192,15 +273,17 @@ a:hover{
 }
 
 
-
-/*.unfollow:hover{*/
-/*  background-color: rgba(0,0,0,0.1);*/
-/*  color:red;*/
-/*}*/
-
 .trim-image-to-circle img{
   width:  50px;
   height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.trim-image-to-circle-navbar img{
+  width:  40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 50%;
@@ -215,7 +298,7 @@ a:hover{
 }
 
 .trim-post-image img{
-  width:  120px;
+  width: 120px;
   height: 120px;
   border-radius: 3%;
   object-fit: cover;
@@ -223,7 +306,8 @@ a:hover{
 }
 
 .trim-post-image-lg img{
-  width:  100%;
+  width: 100%;
+  height: 500px;
   /*border-radius: 3%;*/
   /*height: 200px;*/
   object-fit: cover;
@@ -270,13 +354,8 @@ p{
   margin-bottom: 0;
 }
 
-ul{
-  padding: 0;
-}
-
 .user-edit-button{
   width: 100%;
-  /*background-color: red;*/
 }
 
 .user-edit-button a{
@@ -293,28 +372,38 @@ ul{
   color: red;
 }
 
-.follow_button{
-  width: 100%;
-  cursor: pointer;
-}
-
-.follow_button input{
-  width: 100%;
-  display:block;
-  padding:10px;
-  background-color: #DDD;
-  text-decoration: none;
+.follow, .unfollow{
+  border: solid 2px #00558F;
   border-radius: 5px;
+  text-decoration: none;
   text-align: center;
+  padding: 0;
   margin: 0;
-  border: none;
+  width: 150px;
+}
+
+.follow{
+  background-color: white;
+  color: #00558F;
   cursor: pointer;
 }
 
-.follow_button input:hover{
-  background-color: #AAA;
-  color: red;
+.follow:hover{
+  background-color: #00558F;
+  color: white;
 }
+
+.unfollow{
+  background-color: #00558F;
+  color: white;
+  cursor: pointer;
+}
+
+.unfollow:hover{
+  background-color: white;
+  color: #00558F;
+}
+
 
 
 .my-small{
@@ -323,4 +412,76 @@ ul{
 
 .comment-form{
   background-color: #DDD;
+}
+
+.no-likes, .no-posts, .no-followers, .no-followings, .no-comments{
+  background-color: #DDD;
+  text-align: center;
+}
+
+.footer{
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  border-top: solid 1px gray;
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+.post-show-item{
+  text-align: center;
+  /*background-color: #00558F;*/
+  border: solid 2px #00558F;
+  color: #00558F;
+  /*margin: 5px;*/
+  padding: 3px;
+  width: 130px;
+  height: 100%;
+}
+
+.post-show{
+  position: relative;
+}
+
+.post-show-button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.like, .post-edit-button, .post-delete-button{
+  background-color: white;
+  color: #00558F;
+  border: solid 2px #00558F;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display:table-cell;
+}
+
+.like:hover, .post-edit-button:hover, .post-delete-button:hover{
+  background-color: #00558F;
+  color: white;
+  cursor: pointer;
+}
+
+.unlike{
+  background-color: white;
+  color: #00558F;
+  border: solid 2px #00558F;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  
+}
+.unlike:hover{
+  background-color: #00558F;
+  color: white;
+  cursor: pointer;
 }

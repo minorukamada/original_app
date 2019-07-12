@@ -1,31 +1,43 @@
-<nav class="navbar navbar-expand-sm navbar-white bg-white sticky-top">
-  <a class="navbar-brand" href="/">Minimal Life</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-   
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto"></ul>
-    <ul class="navbar-nav">
-      <% if logged_in? %>
-        <li class="nav-item dropdown">
-          <li class="nav-item"><span class="nav-link"><i class="fas fa-heart"></i><%= link_to 'お気に入り一覧', likes_user_path(current_user) %></span></li>
-          <li class="nav-item"><span class="nav-link"><i class="fas fa-pen fa-fw"></i><%= link_to '新規投稿', new_post_path %></span></li>
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-fw"></i><%= current_user.name %></a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
-          </ul>
-        </li>
-      <% else %>
-        <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
-        <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
-      <% end %>
-    </ul>
-  </div>
+<div class="sticky-top">
+  <ul class="menu d-flex justify-content-between">
+    <li class="title-logo mr-auto"><a href="/">Minimal Life</a></li>
+    <% if logged_in? %>
+      <li class="navbar-item">
+        <%=link_to new_post_path do %>
+          <i class="fas fa-pen fa-lg"></i>
+        <% end %>
+      </li>
+      <li class="navbar-item navbar-icon">
+        <a class="init-bottom">
+          <div class="trim-image-to-circle-navbar m-0">
+            <% if current_user.image? %>
+              <%= image_tag current_user.image.url %>
+            <% elsif %>
+              <%= image_tag ('/no_user_image.png') %>
+            <% end %>
+          </div>
+        </a>
+        <ul class="menu__second-level">
+          <li><%= link_to 'マイページ', user_path(current_user) %></li>
+          <li class="dropdown-divider m-0"></li>
+          <li><%= link_to 'ユーザー情報編集', edit_user_path(current_user) %></li>
+          <li class="dropdown-divider m-0"></li>
+          <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+        </ul>
+      </li>
+    <% elsif %>
+      <li class="navbar-item">
+        <%=link_to signup_path do %>
+          <i class="fas fa-user-plus fa-lg"></i>
+        <% end %>
+      </li>
+      <li class="navbar-item">
+        <%=link_to login_path do %>
+          <i class="fas fa-sign-in-alt fa-lg"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-</nav>
 
-  
-  

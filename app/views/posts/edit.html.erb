@@ -1,6 +1,8 @@
 <div class="row justify-content-center">
   <div class="col-md-6">
+    
     <%= form_with(model: @post, local: true) do |f| %>
+    
       <div class="form-group">
         <div class="p-2">
           <%= f.label :title, "タイトル" %>
@@ -34,33 +36,15 @@
         <div class="p-2">
           <%= f.label :content, "本文" %>
           <%= f.text_area :content, placeholder: "本文を入力", class: 'form-control', rows: 15 %>
-        <div>
+        </div>
       </div>
+      
       <div class="row justify-content-center p-2">
         <%= link_to "戻る", :back, class: 'btn btn-outline-secondary'%>
         <%= f.submit '投稿する', class: 'btn btn-primary ml-3' %>
       </div>
+      
     <% end %>
+    
   </div>
 </div>
-
-<script>
-$( document ).on('turbolinks:load', function() {
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
- 
-      reader.onload = function (e) {
-        $('#aavatar_img_prev').attr('src', e.target.result);
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
- 
-  $("#apost_img").change(function(){
-    $('#aavatar_img_prev').removeClass('hidden');
-    $('.aavatar_present_img').remove();
-    readURL(this);
-  });
-});
-</script>

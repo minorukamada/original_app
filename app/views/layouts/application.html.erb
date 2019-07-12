@@ -22,6 +22,7 @@
     <%= render 'layouts/top' %>
     <%= render 'layouts/flash_messages' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
     <script> 
       $('.post-index').on('click', function(event) {
         const id = $(this).attr("id").replace("post-", "");
@@ -42,6 +43,35 @@
       
       $('.follow_button').click(function (event) {
         event.stopPropagation();
+      });
+      
+      $( document ).on('turbolinks:load', function() {
+        function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+       
+            reader.onload = function (e) {
+              $('#aavatar_img_prev').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+       
+        $("#apost_img").change(function(){
+          $('#aavatar_img_prev').removeClass('hidden');
+          $('.aavatar_present_img').remove();
+          readURL(this);
+        });
+      });
+      
+      $(function(){
+      	$('.unfollow').hover(function(){
+      		$(this).text('フォロー解除');
+      		$(this).css('color', 'red');
+      	},function(){
+      		$(this).text('フォロー中');
+      		$(this).css('color', 'white');
+      	});
       });
     </script> 
     

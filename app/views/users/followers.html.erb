@@ -8,7 +8,7 @@
       <% if @user.followers.count > 0  %>
         <%= render 'users', users: @followers %>
       <% else %>
-        <p class="pt-3">フォローされていません。</p>
+        <p class="mt-3 pt-3 pb-3 no-followers">フォローされていません。</p>
       <% end %>
     </div>
   </div>
