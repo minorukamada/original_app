@@ -13,7 +13,46 @@
  *= require_tree .
  *= require_self
  */
+ 
+.toppage{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+ }
+ 
+.toppage-post{
+  padding: 10px;
+  }
+.toppage-user{
+  padding: 10px;
+  }
+ 
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
 
+.user-left{
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #DDD;
+  text-align: center;
+}
+
+.user-left-content p{
+  display: inline-block;
+  text-align: left;
+}
+
+.user-right{
+  padding: 10px;
+}
 
 #flex-container{
   display: flex;
@@ -32,11 +71,35 @@
   #flex-container .flex-container-item{
     width: 100%;
   }
+  .user-left{
+    width: 100%;
+  }
+  .user-right{
+    width: 100%;
+  }
+  .toppage-post{
+    width: 100%;
+  }
+  .toppage-user{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width:600px) and (max-width:959px) {
   #flex-container .flex-container-item{
     width: 50%;
+  }
+  .user-left{
+    width: 100%;
+  }
+  .user-right{
+    width: 100%;
+  }
+  .toppage-post{
+    width: 100%;
+  }
+  .toppage-user{
+    width: 100%;
   }
 }
 
@@ -44,11 +107,35 @@
   #flex-container .flex-container-item{
     width: 25%;
   }
+  .user-left{
+    width: 30%;
+  }
+  .user-right{
+    width: 50%;
+  }
+  .toppage-post{
+    width: 50%;
+  }
+  .toppage-user{
+    width: 30%;
+  }
 }
 
 @media screen and (min-width:1280px) {
   #flex-container .flex-container-item{
     width: 25%;
+  }
+  .user-left{
+    width: 30%;
+  }
+  .user-right{
+    width: 50%;
+  }
+  .toppage-post{
+    width: 50%;
+  }
+  .toppage-user{
+    width: 30%;
   }
 }
 
@@ -145,7 +232,6 @@ body{
 
 .menu > .navbar-item {
   background: white;
-  border-left: solid 1px white;
   border-bottom: solid 1px black;
 }
 
@@ -186,6 +272,10 @@ a:hover{
   text-decoration: none;
 }
 
+.navbar-new-post a:hover{
+  color: #212529;
+}
+
 .post_user_name a{
   color: #6c757d; 
   text-decoration : underline;
@@ -208,16 +298,6 @@ a:hover{
   border-radius: 0;
   position: relative;
 }
-
-/*.post-index:after {*/
-/*	position: absolute;*/
-/*	top: 0;*/
-/*	left: 0;*/
-/*	border-right: 20px solid transparent;*/
-/*	border-top: 20px solid red; */
-/*	content: "";*/
-/*	opacity: 0.5;*/
-/*}*/
 
 .post-index:hover, .media:hover{
   cursor: pointer;
@@ -277,6 +357,7 @@ a:hover{
   width:  50px;
   height: 50px;
   border-radius: 50%;
+  border: solid 2px white;
   object-fit: cover;
   object-position: 50% 50%;
 }
@@ -290,9 +371,10 @@ a:hover{
 }
 
 .trim-image-to-circle-lg img{
-  width:  300px;
-  height: 300px;
-  border-radius: 3%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: solid 5px white;
   object-fit: cover;
   object-position: 50% 50%;
 }
@@ -333,13 +415,11 @@ a:hover{
   /*bottom: 0;*/
 }
 
-.new_posts, .recommrnd-users{
+.toppage-top{
   border-bottom: double 3px #212529;
+  display: flex;
+  justify-content: space-between;
 }
-
-/*.new_posts h5, .recommrnd-users h5{*/
-/*  font-weight: bold;*/
-/*}*/
 
 .title-search, .user-search{
   width: 50%;
@@ -361,14 +441,15 @@ p{
 .user-edit-button a{
   display:block;
   padding:10px;
-  background-color: #DDD;
+  background-color: #AAA;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
 }
 
 .user-edit-button a:hover{
-  background-color: #AAA;
+  background-color: #BBB;
   color: red;
 }
 
@@ -453,18 +534,18 @@ ul{
   right: 10px;
 }
 
-.like, .post-edit-button, .post-delete-button{
+.like{
   background-color: white;
   color: #00558F;
   border: solid 2px #00558F;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display:table-cell;
 }
 
-.like:hover, .post-edit-button:hover, .post-delete-button:hover{
+.like:hover{
   background-color: #00558F;
   color: white;
   cursor: pointer;
@@ -473,15 +554,51 @@ ul{
 .unlike{
   background-color: white;
   color: #00558F;
-  border: solid 2px #00558F;
+  border: solid 1px #00558F;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   
 }
 .unlike:hover{
   background-color: #00558F;
   color: white;
   cursor: pointer;
+}
+
+.post-edit-button, .post-delete-button{
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display:table-cell;
+}
+
+.post-edit-button:hover, .post-delete-button:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#deleted_comment_button a{
+  text-decoration: none;
+  background-color: white;
+  border: solid 1px gray;
+  padding: 5px;
+}
+
+#deleted_comment_button a:hover{
+  text-decoration: none;
+  background-color: gray;
+  border: solid 1px gray;
+  padding: 5px;
+  color: black;
+}
+
+.toppage-follow-button{
+  text-align: right;
 }

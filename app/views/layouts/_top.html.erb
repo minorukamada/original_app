@@ -1,9 +1,8 @@
 <% if controller_name == "toppages" && controller.action_name == "index" %>
-  <ul class="list-unstyled m-0" id="flex-container">
+  <ul class="list-unstyled m-0 mb-4" id="flex-container">
     <% @posts_header.each do |post_header| %>
       <li class="flex-container-item">
-        <%= link_to post_header do%>
-          
+        <%= link_to post_header do %>
           <% if post_header.image? %>
             <%= image_tag post_header.image.url %>
           <% elsif %>

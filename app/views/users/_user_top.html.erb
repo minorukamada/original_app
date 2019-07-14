@@ -1,5 +1,4 @@
-
-<div class="square-content">
+<div class="user-left-image">
   <div class="trim-image-to-circle-lg m-0">
     <% if @user.image? %>
       <%= image_tag @user.image.url %>
@@ -8,7 +7,9 @@
     <% end %>
   </div>
 </div>
-<h2><%= @user.name %></h2>
-<p><%= @user.introduction %></p>
-<%= render 'relationships/follow_button', user: @user %>
-<%= render 'users/user_edit_button', user: @user %>
+<div class="user-left-content">
+  <h2><%= @user.name %></h2>
+  <%= render 'relationships/follow_button', user: @user %>
+  <p class="pt-3"><%= @user.introduction %></p>
+  <%= render 'users/user_edit_button', user: @user %>
+</div>

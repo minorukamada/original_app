@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
   
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
     member do
       get :timeline
     end

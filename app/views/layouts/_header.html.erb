@@ -2,7 +2,7 @@
   <ul class="menu d-flex justify-content-between">
     <li class="title-logo mr-auto"><a href="/">Minimal Life</a></li>
     <% if logged_in? %>
-      <li class="navbar-item">
+      <li class="navbar-item navbar-new-post" data-toggle="tooltip" data-original-title="記事作成" data-placement="bottom">
         <%=link_to new_post_path do %>
           <i class="fas fa-pen fa-lg"></i>
         <% end %>
@@ -26,12 +26,12 @@
         </ul>
       </li>
     <% elsif %>
-      <li class="navbar-item">
+      <li class="navbar-item" data-toggle="tooltip" data-original-title="新規登録" data-placement="bottom">
         <%=link_to signup_path do %>
           <i class="fas fa-user-plus fa-lg"></i>
         <% end %>
       </li>
-      <li class="navbar-item">
+      <li class="navbar-item" data-toggle="tooltip" data-original-title="ログイン" data-placement="bottom">
         <%=link_to login_path do %>
           <i class="fas fa-sign-in-alt fa-lg"></i>
         <% end %>

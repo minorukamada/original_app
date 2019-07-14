@@ -1,20 +1,16 @@
-<div class="container pt-5">
-  <div class="row">
-    <div class="col-md-8 p-0">
-      <div class="p-2 d-flex justify-content-between new_posts">
-        <h5 class="m-0">新着投稿</h5>
-        <%= link_to 'もっと見る', posts_path %>
-      </div>
-      <%= render 'posts/posts', posts: @posts %>
+<div class="toppage">
+  <div class="toppage-post">
+    <div class="toppage-top">
+      <h5>新着投稿</h5>
+      <%= link_to 'もっと見る', posts_path %>
     </div>
-    <div class="col-md-4">
-      <div class="p-2 d-flex justify-content-between recommrnd-users">
-        <h5 class="m-0">おすすめユーザー</h5>
-        <%= link_to 'もっと見る', users_path %>
-      </div>
-      <%= render 'users/users', users: @users %>
+    <%= render 'posts/posts', posts: @posts %>
+  </div>
+  <div class="toppage-user">
+    <div class="toppage-top">
+      <h5>おすすめユーザー</h5>
+      <%= link_to 'もっと見る', users_path %>
     </div>
+    <%= render 'users/users', users: @users %>
   </div>
 </div>
-
-<!--<%= render 'layouts/footer' %>-->

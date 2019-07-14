@@ -50,8 +50,6 @@ class PostsController < ApplicationController
   def destroy
     @deleted_post_id = @post.id
     @post.destroy
-    # flash[:success] = 'メッセージを削除しました。'
-    # redirect_to root_url
   end
   
   def timeline
@@ -60,14 +58,14 @@ class PostsController < ApplicationController
   end
   
   def ranking
-    @posts = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(10).pluck(:post_id))
+    @posts = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(100).pluck(:post_id))
   end
   
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :category, :image, :remove_image)
+    params.require(:post).permit(:title, :content, :image, :remove_image)
   end
   
   def correct_user

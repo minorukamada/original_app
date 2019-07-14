@@ -9,6 +9,13 @@
           <%=link_to comment.user.name, comment.user %>
           <p class="m-0"><small class="text-muted"><%= comment.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></small></p>
           <%= simple_format comment.content %>
+          <% if comment.user == current_user%>
+            <div id="deleted_comment_button" class="mt-1">
+              <%= link_to post_comment_path(@post, comment), method: :delete, data: { confirm: "You sure?" }, class: "", local: true do %>
+                コメント削除
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <ul class="list-unstyled skill-list jscroll">
   <% posts.each do |post| %>
   <li class="post-index" id="post-<%= post.id %>">
-    <div class="p-2">
+    <div class="pt-2 pb-2">
       <div class="d-flex">
         <div class="trim-post-image m-0">
           <%= render 'posts/post_image', post: post %>
@@ -20,9 +20,9 @@
             </div>
             <div class="d-flex justify-content-between">
               <div class="d-flex justify-content-between">
-                <p class="m-0"><small class="text-muted"><i class="fas fa-eye fa-fw"></i><%= post.impressionist_count %></small></p>
-                <p class="m-0 ml-3"><small class="text-muted"><i class="fas fa-heart fa-fw"></i><%= post.favorites.count %></small></p>
-                <p class="m-0 ml-3"><small class="text-muted"><i class="far fa-comment fa-fw"></i><%= post.comments.count %></small></p>
+                <p class="m-0" data-toggle="tooltip" data-original-title="閲覧数"  data-placement="bottom"><small class="text-muted"><i class="fas fa-eye fa-fw"></i><%= post.impressionist_count %></small></p>
+                <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="お気に入り数"  data-placement="bottom"><small class="text-muted"><i class="fas fa-heart fa-fw"></i><%= post.favorites.count %></small></p>
+                <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="コメント数"  data-placement="bottom"><small class="text-muted"><i class="far fa-comment fa-fw"></i><%= post.comments.count %></small></p>
               </div>
             </div>
           </div>
@@ -34,3 +34,6 @@
   </li>
   <% end %>
 </ul>
+<% unless controller.action_name == "ranking" %>
+  <%= paginate posts, :param_name => 'post_page' %>
+<% end %>

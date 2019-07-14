@@ -1,15 +1,13 @@
-<div class="container pt-5">
-  <div class="row">
-    <div class="col-md-4">
-      <%= render 'users/user_top' %>
-    </div>
-    <div class="col-md-8">
-      <%= render 'users/items'%>
-      <% if @user.likes.count > 0  %>
-        <%= render 'posts/posts', posts: @likes %>
-      <% else %>
-        <p class="mt-3 pt-3 pb-3 no-likes">お気に入りはありません。</p>
-      <% end %>
-    </div>
+<div class="wrapper">
+  <div class="user-left">
+    <%= render 'users/user_top' %>
+  </div>
+  <div class="user-right">
+    <%= render 'users/items'%>
+    <% if @user.likes.count > 0  %>
+      <%= render 'posts/posts', posts: @likes %>
+    <% else %>
+      <p class="mt-3 pt-3 pb-3 no-likes">お気に入りはありません。</p>
+    <% end %>
   </div>
 </div>

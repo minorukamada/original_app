@@ -1,17 +1,17 @@
-<div id="favorite_<%= post.id %>" class="favorite_button">
+<div id="favorite_<%= post.id %>" class="favorite_button" data-toggle="tooltip" data-original-title="お気に入り" data-placement="right">
   <% if logged_in? %>
     <% if current_user.liking?(post) %>
-        <%= form_with(model: current_user.favorites.find_by(post_id: post.id), remote: true, method: :delete) do |f| %>
-          <%= hidden_field_tag :post_id, post.id %>
-          <%= button_tag(type: "submit", class: 'unlike') do %>
-            <i class="fas fa-heart fa-lg fa-fw"></i>
-          <% end %>
+      <%= form_with(model: current_user.favorites.find_by(post_id: post.id), remote: true, method: :delete) do |f| %>
+        <%= hidden_field_tag :post_id, post.id %>
+        <%= button_tag(type: "submit", class: 'unlike') do %>
+          <i class="fas fa-heart"></i>
         <% end %>
+      <% end %>
     <% else %>
       <%= form_with(model: current_user.favorites.build, remote: true) do |f| %>
         <%= hidden_field_tag :post_id, post.id %>
         <%= button_tag(type: "submit", class: 'like') do %>
-          <i class="far fa-heart fa-lg fa-fw"></i>
+          <i class="far fa-heart"></i>
         <% end %>
       <% end %>
     <% end %>

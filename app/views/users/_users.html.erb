@@ -5,9 +5,8 @@
         <%= render 'users/user_image', user: user %>
         <div class="media-body pl-2">
           <h5 class="mt-0"><%= user.name %></h5>
-          <!--<p class="user_introduction"><%= user.introduction %></p>-->
+          <div class="toppage-follow-button"><%= render 'relationships/follow_button', user: user %></div>
         </div>
-        <%= render 'relationships/follow_button', user: user %>
       </li>
       <hr class="m-0">
     <% end %>

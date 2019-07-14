@@ -23,7 +23,7 @@
         <%= render 'posts/posts_button', post: @post %>
       </div>
     </div>
-    <p><%= simple_format @post.content %></p>
+    <div class="mt-5 mb-5"><%= simple_format @post.content %></div>
     <hr>
     <%= render 'comments/form', post: @post, comment: @comment %>
     
