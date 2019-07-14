@@ -1,80 +1,39 @@
-<div class="text-center">
-  <h1>ユーザー情報編集ページ</h1>
+<div class="signup">
+  <h1>ユーザー情報編集</h1>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <%=f.label :image,"ユーザー画像" %>
+    <div class="user-image">
+      <div class="trim-image-to-circle-lg m-0">
+        <img id="avatar_img_prev" src="#" class="hidden">
+        <% if current_user.persisted? && current_user.image? %>
+          <%= image_tag current_user.image.url, class: 'avatar_present_img' %>
+        <% elsif %>
+          <%= image_tag ('/no_user_image.png'), class: 'avatar_present_img' %>
+        <% end %>
+      </div>
+      <div><%= f.file_field :image, id: 'post_img' %></div>
+      <div><%= f.check_box :remove_image %>画像を削除する</div>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, 'ユーザーネーム' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, 'パスワード' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, 'パスワード（確認用）' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+    <div class="button-set">
+      <%= link_to "キャンセル", :back, class: 'cancel-button'%>
+      <%= f.submit '変更を保存', class: 'submit-button'%>
+    </div>
+  <% end %>
 </div>
-
-<div class="row">
-  <div class="col-sm-6 offset-sm-3">
-
-      <%= form_with(model: @user, local: true) do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
-        <%=f.label :image,"ユーザー画像" %>
-        <div class="trim-image-to-circle-lg m-0">
-          <img id="avatar_img_prev" src="#" class="hidden">
-          <% if current_user.persisted? && current_user.image? %>
-            <%= image_tag current_user.image.url, class: 'avatar_present_img' %>
-          <% elsif %>
-            <%= image_tag ('/no_user_image.png'), class: 'avatar_present_img' %>
-          <% end %>
-        </div>
-        <%= f.file_field :image, id: 'post_img' %>
-        <%= f.check_box :remove_image %>画像を削除する
-        
-      
-        
-        
-      
-      <div class="form-group">
-        <%= f.label :name, 'Name' %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :introduction, 'Introduction' %>
-        <%= f.text_field :introduction, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :email, 'Email' %>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, 'Password' %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password_confirmation, 'Confirmation' %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
-      
-      
-      
-      <div class="row justify-content-center">
-        <%= link_to "キャンセル", :back, class: 'btn btn-outline-secondary'%>
-        <%= f.submit '変更を保存', class: 'btn btn-primary ml-3'%>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<script>
-$( document ).on('turbolinks:load', function() {
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
- 
-      reader.onload = function (e) {
-        $('#avatar_img_prev').attr('src', e.target.result);
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
- 
-  $("#post_img").change(function(){
-    $('#avatar_img_prev').removeClass('hidden');
-    $('.avatar_present_img').remove();
-    readURL(this);
-  });
-});
-</script>

@@ -1,33 +1,26 @@
-<div class="row justify-content-center">
-  <div class="col-md-6 post_show">
-    
-    <ul class="d-flex justify-content-content">
-      <li class="mr-auto">
-        <div class="d-flex">
-          <%= render 'users/user_image', user: @post.user %>
-          <div class="pl-3 post-title">
-            <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
-            <p class="m-0">投稿日：<%= @post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></p>
-          </div>
-        </div>
-      </li>
-      <li class="post-show-item">閲覧<h4 class="m-0"><%= @post.impressionist_count %></h4></li>
-      <li class="post-show-item ml-2">お気に入り<h4 class="m-0"><%= @post.favorites.count %></h4></li>
-    </ul>
-    <h2 class="mb-3"><%=@post.title %></h2>
-    <div class="post-show">
-      <div class="trim-post-image-lg">
-        <%= render 'posts/post_image', post: @post %>
-      </div>
-      <div class="post-show-button">
-        <%= render 'posts/posts_button', post: @post %>
-      </div>
+<div class="post_show p-2">
+  <div class="d-flex">
+    <%= render 'users/user_image', user: @post.user %>
+    <div class="pl-3 post-title">
+      <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
+      <p class="m-0">投稿日：<%= @post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></p>
     </div>
-    <div class="mt-5 mb-5"><%= simple_format @post.content %></div>
-    <hr>
-    <%= render 'comments/form', post: @post, comment: @comment %>
-    
-    <%= render 'comments/index', comments: @comments %>
   </div>
+  <div class="post-show-items">
+    <div class="post-show-item">閲覧<h4 class="m-0"><%= @post.impressionist_count %></h4></div>
+    <div class="post-show-item">お気に入り<h4 class="m-0"><%= @post.favorites.count %></h4></div>
+  </div>
+  <h2 class="mb-3"><%=@post.title %></h2>
+  <div class="post-show">
+    <div class="trim-post-image-lg">
+      <%= render 'posts/post_image', post: @post %>
+    </div>
+    <div class="post-show-button">
+      <%= render 'posts/posts_button', post: @post %>
+    </div>
+  </div>
+  <div class="mt-5 mb-5"><%= simple_format @post.content %></div>
+  <hr>
+  <%= render 'comments/form', post: @post, comment: @comment %>
+  <%= render 'comments/index', comments: @comments %>
 </div>
-  

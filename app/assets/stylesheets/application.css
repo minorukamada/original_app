@@ -67,7 +67,7 @@
   position: relative;
 }
 
-@media screen and (min-width:480px) and (max-width:599px) {
+@media screen and (max-width:599px) {
   #flex-container .flex-container-item{
     width: 100%;
   }
@@ -82,6 +82,15 @@
   }
   .toppage-user{
     width: 100%;
+  }
+  .signup{
+    width: 100%;
+  }
+  .post_show{
+    width: 100%;
+  }
+  .trim-post-image-lg img{
+    height: 250px;
   }
 }
 
@@ -101,6 +110,15 @@
   .toppage-user{
     width: 100%;
   }
+  .signup{
+    width: 100%;
+  }
+  .post_show{
+    width: 100%;
+  }
+  .trim-post-image-lg img{
+    height: 500px;
+  }
 }
 
 @media screen and (min-width:960px) and (max-width:1279px) {
@@ -119,6 +137,15 @@
   .toppage-user{
     width: 30%;
   }
+  .signup{
+    width: 50%;
+  }
+  .post_show{
+    width: 60%;
+  }
+  .trim-post-image-lg img{
+    height: 500px;
+  }
 }
 
 @media screen and (min-width:1280px) {
@@ -136,6 +163,15 @@
   }
   .toppage-user{
     width: 30%;
+  }
+  .signup{
+    width: 50%;
+  }
+  .post_show{
+    width: 60%;
+  }
+  .trim-post-image-lg img{
+    height: 500px;
   }
 }
 
@@ -349,7 +385,7 @@ a:hover{
 }
 
 .post_show{
-  background-color: white;
+  margin: 0 auto;
 }
 
 
@@ -389,9 +425,7 @@ a:hover{
 
 .trim-post-image-lg img{
   width: 100%;
-  height: 500px;
-  /*border-radius: 3%;*/
-  /*height: 200px;*/
+  /*height: 500px;*/
   object-fit: cover;
   object-position: 50% 50%;
 }
@@ -435,22 +469,18 @@ p{
 }
 
 .user-edit-button{
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .user-edit-button a{
   display:block;
   padding:10px;
-  background-color: #AAA;
+  background-color: #00558F;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
-}
-
-.user-edit-button a:hover{
-  background-color: #BBB;
-  color: red;
 }
 
 .follow, .unfollow{
@@ -515,13 +545,12 @@ ul{
 
 .post-show-item{
   text-align: center;
-  /*background-color: #00558F;*/
   border: solid 2px #00558F;
   color: #00558F;
-  /*margin: 5px;*/
   padding: 3px;
-  width: 130px;
   height: 100%;
+  width: 120px;
+  margin-left: 10px;
 }
 
 .post-show{
@@ -601,4 +630,58 @@ ul{
 
 .toppage-follow-button{
   text-align: right;
+}
+
+.user-image{
+  text-align: center;
+}
+
+.signup{
+  background-color: #DDD;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.signup > h1{
+  text-align: center;
+}
+
+.submit-button{
+  background-color: #00558F;
+  border: solid 2px #00558F;
+  color: white;
+  width: 49%;
+  height: 50px;
+}
+
+.submit-button:hover{
+  cursor: pointer;
+}
+
+.cancel-button{
+  background-color: white;
+  border: solid 2px #00558F;
+  color: #00558F;
+  width: 49%;
+  height: 50px;
+  text-decoration: none;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  
+}
+
+.cancel-button:hover{
+  color: #00558F;
+}
+
+.button-set{
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-show-items{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
 }
