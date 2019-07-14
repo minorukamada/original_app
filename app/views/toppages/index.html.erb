@@ -1,10 +1,12 @@
 <ul class="list-unstyled m-0 mb-4" id="flex-container">
   <% @posts_header.each do |post| %>
     <li class="flex-container-item">
-      <% if post.image? %>
-        <%= image_tag post.image.url %>
-      <% elsif %>
-        <%= image_tag ('/no_post_image.png') %>
+      <%= link_to post do %>
+        <% if post.image? %>
+          <%= image_tag post.image.url %>
+        <% elsif %>
+          <%= image_tag ('/no_post_image.png') %>
+        <% end %>
       <% end %>
       <p class="p-2"><%=post.title %></p>
     </li>
