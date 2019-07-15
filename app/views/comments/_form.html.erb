@@ -7,7 +7,7 @@
           <div class="pl-3 flex-fill">
             <p class="m-0"><%= current_user.name %>としてコメントを投稿</p>
             <div class="d-flex justify-content-start">
-              <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control comment-formarea" %>
+              <%= f.text_field :content, placeholder: "コメントを入力", class: "form-control" %>
               <%= f.submit '投稿', class: 'btn btn-dark' %>
             </div>
           </div>

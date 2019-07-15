@@ -367,6 +367,7 @@ a:hover{
   border: none;
   margin: 0;
   text-decoration : none;
+  padding: 10px 0;
 }
 
 .nav-tabs .nav-link {
@@ -445,8 +446,6 @@ a:hover{
 
 .post-bottom{
   width: 100%;
-  /*position: absolute;*/
-  /*bottom: 0;*/
 }
 
 .toppage-top{
@@ -459,10 +458,10 @@ a:hover{
   width: 50%;
 }
 
-.comment-formarea{
-  width: 100%;
-  background-color: white;
-}
+/*.comment-formarea{*/
+/*  width: 100%;*/
+/*  background-color: white;*/
+/*}*/
 
 p{
   margin-bottom: 0;
@@ -684,4 +683,8 @@ ul{
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+}
+
+#user_items h3{
+  margin-bottom: 0;
 }

@@ -9,9 +9,13 @@
         <div class="pl-3 post-title">
           <h5 class="mb-0"><%=post.title %></h5>
           <div class="post-bottom">
-            <div class="d-flex justify-content-content">
-              <p class="m-0 post_user_name"><small class="text-muted">投稿者：<%= link_to post.user.name, user_path(post.user) %></small></p>
-              <p class="m-0 ml-3">
+            <div>
+              <p class="m-0 post_user_name">
+                <small class="text-muted">
+                  投稿者：<%= link_to post.user.name, user_path(post.user) %>
+                </small>
+              </p>
+              <p class="m-0">
                 <small class="text-muted">
                   投稿日：<%= post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %>
                 </small>
