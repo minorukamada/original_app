@@ -660,6 +660,7 @@ ul{
 .cancel-button{
   background-color: white;
   border: solid 2px #00558F;
+  border-radius: 0;
   color: #00558F;
   width: 49%;
   height: 50px;
@@ -667,7 +668,6 @@ ul{
   display: flex;
 	align-items: center;
 	justify-content: center;
-  
 }
 
 .cancel-button:hover{
