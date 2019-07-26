@@ -141,7 +141,7 @@
     width: 50%;
   }
   .post_show{
-    width: 60%;
+    width: 50%;
   }
   .trim-post-image-lg img{
     height: 500px;
@@ -168,7 +168,7 @@
     width: 50%;
   }
   .post_show{
-    width: 60%;
+    width: 50%;
   }
   .trim-post-image-lg img{
     height: 500px;
@@ -384,11 +384,6 @@ a:hover{
 .media{
   background-color: white;
 }
-
-.post_show{
-  margin: 0 auto;
-}
-
 
 .trim-image-to-circle img{
   width:  50px;
@@ -687,4 +682,16 @@ ul{
 
 #user_items h3{
   margin-bottom: 0;
+}
+
+.post_show{
+  margin: 0 auto;
+}
+
+.post_show h2{
+  padding: 50px 0 50px 0;
+}
+
+.post-show-content{
+  padding: 50px 0 50px 0;
 }

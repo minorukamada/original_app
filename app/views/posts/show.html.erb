@@ -10,7 +10,7 @@
     <div class="post-show-item">閲覧<h4 class="m-0"><%= @post.impressionist_count %></h4></div>
     <div class="post-show-item">お気に入り<h4 class="m-0"><%= @post.favorites.count %></h4></div>
   </div>
-  <h2 class="mb-3"><%=@post.title %></h2>
+  <h2><%=@post.title %></h2>
   <div class="post-show">
     <div class="trim-post-image-lg">
       <%= render 'posts/post_image', post: @post %>
@@ -19,7 +19,7 @@
       <%= render 'posts/posts_button', post: @post %>
     </div>
   </div>
-  <div class="mt-5 mb-5"><%= simple_format @post.content %></div>
+  <div class="post-show-content"><%= simple_format @post.content %></div>
   <hr>
   <%= render 'comments/form', post: @post, comment: @comment %>
   <%= render 'comments/index', comments: @comments %>
