@@ -19,8 +19,10 @@
       <%= render 'posts/posts_button', post: @post %>
     </div>
   </div>
-  <div class="post-show-content"><%= simple_format @post.content %></div>
+  <div class="post-show-content"><%= safe_join(@post.content.split("\n"), tag(:br)) %></div>
   <hr>
   <%= render 'comments/form', post: @post, comment: @comment %>
   <%= render 'comments/index', comments: @comments %>
 </div>
+
+

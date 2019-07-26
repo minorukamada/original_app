@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   
-  validates :content, presence: true, length: { maximum: 255 }
+  validates :content, presence: true, length: { maximum: 3000 }
   validates :title, presence: true, length: { maximum: 50 }
   
   def self.search(search)
