@@ -17,7 +17,11 @@
     </div>
     <div class="form-group">
       <%= f.label :name, 'ユーザーネーム' %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, placeholder: "ユーザーネームを入力(20文字以内)", class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :introduction, '自己紹介(任意)' %>
+      <%= f.text_area :introduction, placeholder: "自己紹介を入力(100文字以内)", class: 'form-control', rows: 5 %>
     </div>
     <div class="form-group">
       <%= f.label :email, 'メールアドレス' %>

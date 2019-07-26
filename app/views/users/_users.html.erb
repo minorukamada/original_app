@@ -5,6 +5,13 @@
         <%= render 'users/user_image', user: user %>
         <div class="media-body pl-2">
           <h5 class="mt-0"><%= user.name %></h5>
+          <p class="mt-0"><%= user.introduction %></p>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between">
+              <p class="m-0" data-toggle="tooltip" data-original-title="記事"  data-placement="bottom"><small class="text-muted"><i class="fas fa-book-open fa-fw"></i> <%= user.posts.count %></small></p>
+              <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="フォロワー"  data-placement="bottom"><small class="text-muted"><i class="fas fa-users fa-fw"></i> <%= user.followers.count %></small></p>
+            </div>
+          </div>
           <div class="toppage-follow-button"><%= render 'relationships/follow_button', user: user %></div>
         </div>
       </li>
