@@ -8,7 +8,13 @@
           <%= image_tag ('/no_post_image.png') %>
         <% end %>
       <% end %>
-      <p class="p-2"><%=post.title %></p>
+      <p class="flex-container-item-post-title p-2"><%=link_to post.title, post %></p>
+      <p class="flex-container-item-post-user p-2"><%= link_to post.user.name, user_path(post.user) %></p>
+      <div class="flex-container-item-post-item d-flex justify-content-between">
+        <p class="m-0"><small><i class="fas fa-eye fa-fw"></i> <%= post.impressionist_count %></small></p>
+        <p class="m-0 ml-3"><small><i class="fas fa-heart fa-fw"></i> <%= post.favorites.count %></small></p>
+        <p class="m-0 ml-3"><small><i class="far fa-comment fa-fw"></i> <%= post.comments.count %></small></p>
+      </div>
     </li>
   <% end %>
 </ul>

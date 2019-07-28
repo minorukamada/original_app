@@ -1,15 +1,16 @@
-<%= render 'favorites/favorite_button', post: post %>
 <% if current_user == post.user %>
   <!--編集ボタン-->
-  <div class="mt-1" data-toggle="tooltip" data-original-title="編集" data-placement="right">
-    <%=link_to edit_post_path(post), class: "btn btn-default post-edit-button" do %>
-      <i class="far fa-edit"></i>
-    <% end %>
-  </div>
-  <!--削除ボタン-->
-  <div id="deleted_button" class="mt-1" data-toggle="tooltip" data-original-title="削除" data-placement="right">
-    <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default post-delete-button", remote: true do %>
-      <i class="far fa-trash-alt"></i>
-    <% end %>
+  <div class="d-flex justify-content-end">
+    <div class="mt-1" data-toggle="tooltip" data-original-title="編集" data-placement="bottom">
+      <%=link_to edit_post_path(post), class: "btn btn-default post-edit-button" do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    </div>
+    <!--削除ボタン-->
+    <div id="deleted_button" class="mt-1" data-toggle="tooltip" data-original-title="削除" data-placement="bottom">
+      <%= link_to post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default post-delete-button", remote: true do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
   </div>
 <% end %>

@@ -3,8 +3,13 @@
   <li class="post-index" id="post-<%= post.id %>">
     <div class="p-2">
       <div class="d-flex">
-        <div class="trim-post-image m-0">
-          <%= render 'posts/post_image', post: post %>
+        <div class="favorite_button_position_parent">
+          <div class="trim-post-image m-0">
+            <%= render 'posts/post_image', post: post %>
+          </div>
+          <div class="favorite_button_position_child">
+            <%= render 'favorites/favorite_button', post: post %>
+          </div>
         </div>
         <div class="pl-3 post-title">
           <h5 class="mb-0"><%=post.title %></h5>
@@ -28,12 +33,15 @@
                 <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="お気に入り"  data-placement="bottom"><small class="text-muted"><i class="fas fa-heart fa-fw"></i> <%= post.favorites.count %></small></p>
                 <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="コメント"  data-placement="bottom"><small class="text-muted"><i class="far fa-comment fa-fw"></i> <%= post.comments.count %></small></p>
               </div>
+              <%= render 'posts/posts_button', post: post %>
             </div>
+           
           </div>
          </div>
+         
       </div>
-        
     </div>
+    
     <hr class="m-0">
   </li>
   <% end %>
