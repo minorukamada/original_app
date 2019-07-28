@@ -8,8 +8,8 @@
           <p class="mt-0"><%= user.introduction %></p>
           <div class="d-flex justify-content-between">
             <div class="d-flex justify-content-between">
-              <p class="m-0"><small class="text-muted">記事数<i class="fas fa-book-open fa-fw"></i> <%= user.posts.count %></small></p>
-              <p class="m-0 ml-3"><small class="text-muted">フォロワー数<i class="fas fa-users fa-fw"></i> <%= user.followers.count %></small></p>
+              <p class="m-0"><small class="text-muted">記事数 <i class="fas fa-book-open fa-fw"></i> <%= user.posts.count %></small></p>
+              <p class="m-0 ml-3"><small class="text-muted">フォロワー数 <i class="fas fa-users fa-fw"></i> <%= user.followers.count %></small></p>
             </div>
           </div>
           <div class="toppage-follow-button"><%= render 'relationships/follow_button', user: user %></div>

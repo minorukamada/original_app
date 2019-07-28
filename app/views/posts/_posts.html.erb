@@ -1,5 +1,5 @@
 <ul class="list-unstyled skill-list jscroll">
-  <% posts.each do |post| %>
+  <% posts.each_with_index do |post, index| %>
   <li class="post-index" id="post-<%= post.id %>">
     <div class="p-2">
       <div class="d-flex">
@@ -7,6 +7,13 @@
           <div class="trim-post-image m-0">
             <%= render 'posts/post_image', post: post %>
           </div>
+          
+          <% if controller.controller_name == 'toppages' && controller.action_name == 'index' %>
+          <div class="post-index-ranking">
+            <span></span>
+            <p><%= index+1 %></p>
+            </div>
+          <% end %>
           <div class="favorite_button_position_child">
             <%= render 'favorites/favorite_button', post: post %>
           </div>
@@ -46,6 +53,3 @@
   </li>
   <% end %>
 </ul>
-<% unless controller.action_name == "ranking" %>
-  <%= paginate posts, :param_name => 'post_page' %>
-<% end %>

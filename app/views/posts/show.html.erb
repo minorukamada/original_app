@@ -3,7 +3,7 @@
     <%= render 'users/user_image', user: @post.user %>
     <div class="pl-3 post-title">
       <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
-      <p class="m-0">投稿日：<%= @post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></p>
+      <p class="m-0">投稿日：<%= @post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %>・<%= time_ago_in_words(@post.created_at) %></p>
       <div class="d-flex justify-content-first">
         <p class="m-0" data-toggle="tooltip" data-original-title="閲覧"  data-placement="bottom"><i class="fas fa-eye fa-fw"></i> <%= @post.impressionist_count %></p>
         <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="お気に入り"  data-placement="bottom"><i class="fas fa-heart fa-fw"></i> <%= @post.favorites.count %></p>
