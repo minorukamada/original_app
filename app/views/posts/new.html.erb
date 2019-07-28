@@ -3,11 +3,11 @@
     <%= form_with(model: @post, local: true) do |f| %>
       <div class="form-group">
         <div class="pb-5">
-          <%= f.label :title, "タイトル" %>
+          <%= f.label :title, "タイトル" %> <span class="badge badge-danger">必須</span>
           <%= f.text_field :title, placeholder: "タイトルを入力(50文字以内)", class: 'form-control' %>
         </div>
         <div class="pb-5">
-          <%=f.label :image,"サムネイル画像" %>
+          <%=f.label :image,"サムネイル画像（選択しない場合、現在の画像が表示されます。）" %>
           <div class="trim-post-image-lg pb-2">
             <img id="aavatar_img_prev" src="#" class="hidden">
             <% if @post.image? %>
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div>
-          <%= f.label :content, "本文" %>
+          <%= f.label :content, "本文" %> <span class="badge badge-danger">必須</span>
           <%= f.text_area :content, placeholder: "本文を入力(3000文字以内)", class: 'form-control', rows: 20 %>
         </div>
       </div>

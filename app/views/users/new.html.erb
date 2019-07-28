@@ -2,7 +2,7 @@
   <h1>新規登録</h1>
   <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
-    <%=f.label :image,"ユーザー画像" %>
+    <%=f.label :image,"ユーザー画像（任意）" %>
     <div class="user-image">
       <div class="trim-image-to-circle-lg m-0">
         <img id="avatar_img_prev" src="#" class="hidden">
@@ -12,23 +12,23 @@
       <div><%= f.check_box :remove_image %>画像を削除する</div>
     </div>
     <div class="form-group">
-      <%= f.label :name, 'ユーザーネーム' %>
+      <%= f.label :name, 'ユーザーネーム' %> <span class="badge badge-danger">必須</span>
       <%= f.text_field :name, placeholder: "ユーザーネームを入力(20文字以内)", class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :introduction, '自己紹介(任意)' %>
+      <%= f.label :introduction, '自己紹介（任意）' %>
       <%= f.text_area :introduction, placeholder: "自己紹介を入力(100文字以内)", class: 'form-control', rows: 5 %>
     </div>
     <div class="form-group">
-      <%= f.label :email, 'メールアドレス' %>
+      <%= f.label :email, 'メールアドレス' %> <span class="badge badge-danger">必須</span>
       <%= f.email_field :email, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :password, 'パスワード' %>
+      <%= f.label :password, 'パスワード' %> <span class="badge badge-danger">必須</span>
       <%= f.password_field :password, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :password_confirmation, 'パスワード（確認用）' %>
+      <%= f.label :password_confirmation, 'パスワード（確認用）' %> <span class="badge badge-danger">必須</span>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
     <div class="button-set">

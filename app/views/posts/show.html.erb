@@ -4,19 +4,21 @@
     <div class="pl-3 post-title">
       <p class="m-0">投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
       <p class="m-0">投稿日：<%= @post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></p>
+      <div class="d-flex justify-content-first">
+        <p class="m-0" data-toggle="tooltip" data-original-title="閲覧"  data-placement="bottom"><i class="fas fa-eye fa-fw"></i> <%= @post.impressionist_count %></p>
+        <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="お気に入り"  data-placement="bottom"><i class="fas fa-heart fa-fw"></i> <%= @post.favorites.count %></p>
+        <p class="m-0 ml-3" data-toggle="tooltip" data-original-title="コメント"  data-placement="bottom"><i class="far fa-comment fa-fw"></i> <%= @post.comments.count %></p>
+      </div>
     </div>
   </div>
-  <div class="post-show-items">
-    <div class="post-show-item">閲覧<h4 class="m-0"><%= @post.impressionist_count %></h4></div>
-    <div class="post-show-item">お気に入り<h4 class="m-0"><%= @post.favorites.count %></h4></div>
+  <%= render 'posts/posts_button', post: @post %>
+  <div class="post-show-title-favorite d-flex justify-content-between">
+    <h2><%=@post.title %></h2>
+    <%= render 'favorites/favorite_button', post: @post %>
   </div>
-  <h2><%=@post.title %></h2>
   <div class="post-show">
     <div class="trim-post-image-lg">
       <%= render 'posts/post_image', post: @post %>
-    </div>
-    <div class="post-show-button">
-      <%= render 'posts/posts_button', post: @post %>
     </div>
   </div>
   <div class="post-show-content"><%= safe_join(@post.content.split("\n"), tag(:br)) %></div>

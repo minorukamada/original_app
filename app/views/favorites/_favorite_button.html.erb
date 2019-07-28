@@ -1,5 +1,5 @@
-<div id="favorite_<%= post.id %>" class="favorite_button" data-toggle="tooltip" data-original-title="お気に入り" data-placement="right">
-  <% if logged_in? %>
+<% if logged_in? %>
+  <div id="favorite_<%= post.id %>" class="favorite_button" data-toggle="tooltip" data-original-title="お気に入り" data-placement="right">
     <% if current_user.liking?(post) %>
       <%= form_with(model: current_user.favorites.find_by(post_id: post.id), remote: true, method: :delete) do |f| %>
         <%= hidden_field_tag :post_id, post.id %>
@@ -15,6 +15,6 @@
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
