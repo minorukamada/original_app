@@ -617,6 +617,10 @@ ul{
   text-align: center;
 }
 
+.post-image{
+  text-align: center;
+}
+
 .signup{
   background-color: #DDD;
   padding: 30px;
@@ -631,19 +635,22 @@ ul{
   background-color: #00558F;
   border: solid 2px #00558F;
   color: white;
+  border-radius: 0;
   width: 49%;
   height: 50px;
 }
 
 .submit-button:hover{
   cursor: pointer;
+  background-color: white;
+  color: #00558F;
 }
 
 .cancel-button{
-  background-color: white;
-  border: solid 2px #00558F;
+  background-color: #DDD;
+  border: solid 2px #DDD;
   border-radius: 0;
-  color: #00558F;
+  color: #212529;
   width: 49%;
   height: 50px;
   text-decoration: none;
@@ -653,8 +660,10 @@ ul{
 }
 
 .cancel-button:hover{
-  color: #00558F;
+  color: #212529;
 }
+
+
 
 .button-set{
   display: flex;
