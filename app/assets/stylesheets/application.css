@@ -342,6 +342,10 @@ a:hover{
   color: #212529;
 }
 
+.post_user_name{
+  display: block;
+}
+
 .post_user_name a{
   color: #6c757d; 
   text-decoration : underline;

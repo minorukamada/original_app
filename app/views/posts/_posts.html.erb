@@ -7,7 +7,6 @@
           <div class="trim-post-image m-0">
             <%= render 'posts/post_image', post: post %>
           </div>
-          
           <% if controller.controller_name == 'toppages' && controller.action_name == 'index' %>
           <div class="post-index-ranking">
             <span></span>
@@ -19,21 +18,10 @@
           </div>
         </div>
         <div class="pl-3 post-title">
-          <h5 class="mb-0"><%=post.title %></h5>
+          <h5><%=post.title %></h5>
           <div class="post-bottom">
-            <div>
-              <p class="m-0 post_user_name">
-                <small class="text-muted">
-                  投稿者：<%= link_to post.user.name, user_path(post.user) %>
-                </small>
-              </p>
-              <p class="m-0">
-                <small class="text-muted">
-                  投稿日：<%= post.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %>
-                </small>
-                <small class="text-muted">・<%= time_ago_in_words(post.created_at) %></small>
-              </p>
-            </div>
+            <p><small class="text-muted post_user_name"><i class="fas fa-user fa-fw"></i> <%= link_to post.user.name, user_path(post.user) %></small></p>
+            <p><small class="text-muted"><i class="far fa-clock fa-fw"></i> <%= time_ago_in_words(post.created_at) %></small></p>
             <div class="d-flex justify-content-between">
               <div class="d-flex justify-content-between">
                 <p class="m-0" data-toggle="tooltip" data-original-title="閲覧"  data-placement="bottom"><small class="text-muted"><i class="fas fa-eye fa-fw"></i> <%= post.impressionist_count %></small></p>
@@ -42,13 +30,10 @@
               </div>
               <%= render 'posts/posts_button', post: post %>
             </div>
-           
           </div>
          </div>
-         
       </div>
     </div>
-    
     <hr class="m-0">
   </li>
   <% end %>
