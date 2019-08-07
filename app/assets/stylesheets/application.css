@@ -218,7 +218,7 @@
   text-decoration: underline;
 }
 
-.flex-container-item .flex-container-item-post-user a{
+.flex-container-item .flex-container-item-post-user{
   position: absolute;
   bottom: 5%;
   right: 2%;
@@ -647,7 +647,7 @@ ul{
 }
 
 .cancel-button{
-  background-color: #DDD;
+  background-color: white;
   border: solid 2px #DDD;
   border-radius: 0;
   color: #212529;
